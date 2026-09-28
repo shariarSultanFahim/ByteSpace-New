@@ -1,6 +1,21 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export function Hero() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      router.push("/search");
+    }
+  };
   return (
     <section
       className="relative w-full overflow-hidden bg-[#003be2] pt-0 pb-12"
@@ -104,7 +119,10 @@ export function Hero() {
         </div>
 
         {/* Search Bar */}
-        <div className="mx-auto mt-10 flex max-w-[581px] flex-col items-center justify-center gap-4 sm:flex-row">
+        <form
+          onSubmit={handleSearch}
+          className="mx-auto mt-10 flex max-w-[581px] flex-col items-center justify-center gap-4 sm:flex-row"
+        >
           <div className="flex h-[52px] w-full max-w-[461px] items-center gap-2 rounded-full bg-white px-6 py-3 shadow-lg">
             <Image
               src="/images/search-icon.svg"
@@ -115,17 +133,19 @@ export function Hero() {
             />
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Course, topic, creator"
               className="w-full bg-transparent font-sans text-[16px] text-[#242528] placeholder:text-[#82868e] focus:outline-none sm:text-[18px]"
             />
           </div>
           <button
-            type="button"
+            type="submit"
             className="flex h-[46px] w-full items-center justify-center rounded-full bg-[#d4fb20] px-6 font-sans text-[18px] font-medium text-[#242528] shadow-md transition-transform hover:scale-105 active:scale-95 sm:w-auto"
           >
             Search
           </button>
-        </div>
+        </form>
 
         {/* Hero Visual Collage & Floating Cards */}
         <div className="relative mx-auto mt-16 max-w-[900px] pb-10">

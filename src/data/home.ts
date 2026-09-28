@@ -40,7 +40,8 @@ export const COURSES_DATA: CourseCard[] = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     studentsCount: "26+",
-    image: "/images/course-card-1.png"
+    image: "/images/course-card-1.png",
+    category: "UI/UX Design"
   },
   {
     id: "course-2",
@@ -54,7 +55,8 @@ export const COURSES_DATA: CourseCard[] = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     studentsCount: "26+",
-    image: "/images/course-card-2.png"
+    image: "/images/course-card-2.png",
+    category: "Drawing & Painting"
   },
   {
     id: "course-3",
@@ -68,7 +70,8 @@ export const COURSES_DATA: CourseCard[] = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     studentsCount: "26+",
-    image: "/images/course-card-3.png"
+    image: "/images/course-card-3.png",
+    category: "Data Science"
   },
   {
     id: "course-4",
@@ -82,7 +85,8 @@ export const COURSES_DATA: CourseCard[] = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     studentsCount: "26+",
-    image: "/images/course-card-4.png"
+    image: "/images/course-card-4.png",
+    category: "Productivity"
   },
   {
     id: "course-5",
@@ -96,7 +100,8 @@ export const COURSES_DATA: CourseCard[] = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     studentsCount: "26+",
-    image: "/images/course-card-5.png"
+    image: "/images/course-card-5.png",
+    category: "Marketing"
   },
   {
     id: "course-6",
@@ -110,7 +115,8 @@ export const COURSES_DATA: CourseCard[] = [
     duration: "2 hours 16 mins",
     comments: "59 Comments",
     studentsCount: "26+",
-    image: "/images/course-card-6.png"
+    image: "/images/course-card-6.png",
+    category: "Creative Marketing"
   }
 ];
 

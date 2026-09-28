@@ -11,6 +11,7 @@ export interface CourseCard {
   comments: string;
   studentsCount: string;
   image: string;
+  category?: string;
 }
 
 export interface CategoryCard {
