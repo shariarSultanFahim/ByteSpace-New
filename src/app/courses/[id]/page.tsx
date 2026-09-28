@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { notFound } from "next/navigation";
 
 import { getCourseDetail } from "@/data";
 
@@ -36,38 +36,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
   const course = getCourseDetail(id);
 
   if (!course) {
-    return (
-      <div className="flex min-h-screen flex-col bg-white">
-        <div className="bg-[#003be2]">
-          <Header />
-        </div>
-        <main className="flex flex-1 flex-col items-center justify-center px-6 py-24 text-center">
-          <div className="flex size-20 items-center justify-center rounded-full bg-[#f5f5f6]">
-            <Image
-              src="/images/search-icon.svg"
-              alt=""
-              width={40}
-              height={40}
-              className="opacity-40"
-            />
-          </div>
-          <h1 className="mt-6 font-['Poppins'] text-[32px] font-semibold text-[#242528]">
-            Course Not Found
-          </h1>
-          <p className="mt-2 max-w-[460px] font-sans text-[16px] text-[#4b4c53]">
-            We could not find the course you were looking for. It may have been relocated or
-            removed.
-          </p>
-          <Link
-            href="/search"
-            className="mt-8 rounded-full bg-[#d4fb20] px-8 py-3.5 font-sans text-[16px] font-semibold text-[#242528] shadow-md transition-transform hover:scale-105"
-          >
-            Browse All Courses
-          </Link>
-        </main>
-        <Footer />
-      </div>
-    );
+    notFound();
   }
 
   return (
