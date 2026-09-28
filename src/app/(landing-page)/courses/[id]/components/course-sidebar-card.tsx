@@ -22,10 +22,6 @@ export function CourseSidebarCard({ course }: CourseSidebarCardProps) {
     toast.success(`Enrolled in ${course.title}! Welcome to the course.`);
   };
 
-  const handleProfileClick = () => {
-    toast.info(`Creator profile: ${course.author}`);
-  };
-
   return (
     <aside className="w-full max-w-[420px] rounded-[24px] border border-[#ced0d3] bg-white p-8 shadow-xl lg:p-[40px]">
       <div className="flex flex-col gap-6">
