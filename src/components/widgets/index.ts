@@ -5,3 +5,4 @@ export * from "./categories";
 export * from "./creator-growth";
 export * from "./cta-section";
 export * from "./testimonials";
+export * from "./auth-layout";
