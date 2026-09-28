@@ -60,9 +60,9 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
             {/* Visual Collage Stage matching exact Figma coordinates */}
             <div className="relative mt-12 h-[680px] w-full max-w-[580px]">
               {/* Lime Torus (Cone_01 2 top left) */}
-              <div className="pointer-events-none absolute top-[10px] left-[30px] z-10">
+              <div className="pointer-events-none absolute top-[10px] left-[30px] z-100">
                 <Image
-                  src="/images/auth-cone-torus.png"
+                  src="/images/auth-torus-lime.png"
                   alt=""
                   width={146}
                   height={146}
@@ -277,7 +277,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               </div>
 
               {/* 3D Lime Pyramid (Bottom Left) */}
-              <div className="pointer-events-none absolute bottom-[10px] -left-[20px] z-30">
+              <div className="pointer-events-none absolute bottom-[100px] -left-[20px] z-100">
                 <Image
                   src="/images/auth-cone-pyramid.png"
                   alt=""
@@ -288,7 +288,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               </div>
 
               {/* 3D White Ribbon (Bottom Right) */}
-              <div className="pointer-events-none absolute right-[10px] bottom-[60px] z-30">
+              <div className="pointer-events-none absolute right-[10px] bottom-[150px] z-100 -rotate-60">
                 <Image
                   src="/images/auth-ribbon-white.png"
                   alt=""
@@ -299,7 +299,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               </div>
 
               {/* Happy Students Badge (Lime Pill) */}
-              <div className="absolute right-[80px] bottom-[30px] z-40 rounded-[16px] bg-[#d4fb20] p-[16px] shadow-2xl backdrop-blur-[10px]">
+              <div className="absolute right-[80px] bottom-[110px] z-40 rounded-[16px] bg-[#d4fb20] p-[16px] shadow-2xl backdrop-blur-[10px]">
                 <p className="font-sans text-[16px] font-medium text-[#242528]">Happy Students</p>
                 <div className="mt-[2px] flex items-center gap-1 font-sans text-[10px] text-[#424348]">
                   <span className="font-bold text-[#242528]">4.5</span>

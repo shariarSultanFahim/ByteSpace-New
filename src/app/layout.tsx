@@ -4,7 +4,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import { seoConfig } from "@/config/seo";
+import { jsonLd, seoConfig } from "@/config/seo";
 import { siteConfig } from "@/config/site";
 import { env } from "@/env";
 
@@ -38,6 +38,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body

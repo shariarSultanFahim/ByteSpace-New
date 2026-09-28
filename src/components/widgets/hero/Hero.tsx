@@ -17,10 +17,7 @@ export function Hero() {
     }
   };
   return (
-    <section
-      className="relative w-full overflow-hidden bg-[#003be2] pt-0 pb-12"
-      data-node-id="1:1695"
-    >
+    <section className="relative w-full overflow-hidden bg-[#003be2]" data-node-id="1:1695">
       {/* Background Grid */}
       <div className="pointer-events-none absolute inset-0 z-0 flex justify-center opacity-40">
         <Image
@@ -34,8 +31,8 @@ export function Hero() {
       </div>
 
       {/* Center Yellowish Lime Arc (Ellipse 7) */}
-      <div className="pointer-events-none absolute top-[582px] left-1/2 z-0 -translate-x-1/2">
-        <div className="h-[1149px] w-[1149px] rounded-full bg-[#cbfa04]" />
+      <div className="pointer-events-none absolute top-[400px] left-1/2 z-0 mt-30 -translate-x-1/2 sm:top-[380px] lg:top-[360px]">
+        <div className="h-[960px] w-[960px] rounded-full bg-[#cbfa04] sm:h-[1100px] sm:w-[1100px] lg:h-[1250px] lg:w-[1250px]" />
       </div>
 
       {/* Floating 3D Ornaments */}
@@ -148,7 +145,7 @@ export function Hero() {
         </form>
 
         {/* Hero Visual Collage & Floating Cards */}
-        <div className="relative mx-auto mt-16 max-w-[900px] pb-10">
+        <div className="relative mx-auto mt-16 max-w-[940px]">
           {/* Main Hero Student Image */}
           <div className="relative mx-auto h-[400px] w-[320px] sm:h-[500px] sm:w-[480px] lg:h-[541px] lg:w-[578px]">
             <Image
@@ -161,7 +158,7 @@ export function Hero() {
           </div>
 
           {/* Floating Card: UI/UX Design (Left) */}
-          <div className="absolute top-[28%] left-0 z-30 hidden rounded-2xl bg-white/95 p-4 text-left shadow-2xl backdrop-blur-md sm:block lg:left-[50px]">
+          <div className="absolute top-[18%] left-0 z-30 hidden rounded-2xl bg-white p-4 text-left shadow-[0_12px_32px_rgba(0,0,0,0.12)] sm:block lg:left-[40px]">
             <p className="font-sans text-[16px] font-medium text-[#242528]">UI/UX Design</p>
             <div className="mt-1 flex items-center gap-2 font-sans text-[12px] text-[#82868e]">
               <span>200 Courses</span>
@@ -170,13 +167,19 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Floating Card: Happy Students (Bottom Left) */}
-          <div className="absolute -bottom-4 left-4 z-30 rounded-2xl bg-white/95 p-4 text-left shadow-2xl backdrop-blur-md sm:bottom-4 lg:left-[60px]">
+          {/* Floating Card: Happy Students (Bottom Left - overlapping edge) */}
+          <div className="absolute -bottom-2 -left-6 z-30 rounded-2xl bg-white p-4 text-left shadow-[0_12px_32px_rgba(0,0,0,0.12)] sm:bottom-6 sm:-left-4 lg:-left-6">
             <p className="font-sans text-[16px] font-medium text-[#242528]">Happy Students</p>
             <div className="mt-0.5 flex items-center gap-1.5 font-sans text-[12px] text-[#82868e]">
               <span className="font-medium text-[#242528]">4.5</span>
               <span>(240)</span>
-              <Image src="/images/star-rate.svg" alt="" width={16} height={16} className="size-4" />
+              <Image
+                src="/images/star-rate.svg"
+                alt=""
+                width={14}
+                height={14}
+                className="size-3.5"
+              />
             </div>
             {/* Avatars */}
             <div className="mt-3 flex items-center">
@@ -192,43 +195,57 @@ export function Hero() {
                 alt=""
                 width={36}
                 height={36}
-                className="-ml-3 size-9 rounded-full border-2 border-white object-cover"
+                className="-ml-2.5 size-9 rounded-full border-2 border-white object-cover"
               />
               <Image
                 src="/images/avatar-hero-3.png"
                 alt=""
                 width={36}
                 height={36}
-                className="-ml-3 size-9 rounded-full border-2 border-white object-cover"
+                className="-ml-2.5 size-9 rounded-full border-2 border-white object-cover"
               />
               <Image
                 src="/images/avatar-hero-4.png"
                 alt=""
                 width={36}
                 height={36}
-                className="-ml-3 size-9 rounded-full border-2 border-white object-cover"
+                className="-ml-2.5 size-9 rounded-full border-2 border-white object-cover"
               />
               <Image
                 src="/images/avatar-hero-5.png"
                 alt=""
                 width={36}
                 height={36}
-                className="-ml-3 size-9 rounded-full border-2 border-white object-cover"
+                className="-ml-2.5 size-9 rounded-full border-2 border-white object-cover"
               />
-              <div className="-ml-3 flex size-9 items-center justify-center rounded-full border-2 border-white bg-[#d4fb20] font-sans text-[12px] font-bold text-[#242528]">
+              <Image
+                src="/images/avatar-hero-6.png"
+                alt=""
+                width={36}
+                height={36}
+                className="-ml-2.5 size-9 rounded-full border-2 border-white object-cover"
+              />
+              <Image
+                src="/images/avatar-hero-7.png"
+                alt=""
+                width={36}
+                height={36}
+                className="-ml-2.5 size-9 rounded-full border-2 border-white object-cover"
+              />
+              <div className="-ml-2.5 flex size-9 items-center justify-center rounded-full border-2 border-white bg-[#d4fb20] font-sans text-[12px] font-bold text-[#242528]">
                 2K+
               </div>
             </div>
           </div>
 
           {/* Floating Card: Learning Progress (Right) */}
-          <div className="absolute top-[32%] right-4 z-30 rounded-2xl bg-white/95 p-4 text-left shadow-2xl backdrop-blur-md sm:right-8 lg:right-[40px]">
+          <div className="absolute top-[20%] right-2 z-30 rounded-2xl bg-white p-5 text-left shadow-[0_12px_32px_rgba(0,0,0,0.12)] sm:right-6 lg:right-[30px]">
             <p className="font-sans text-[14px] font-medium text-[#242528]">Learning Progress</p>
-            <p className="font-['Poppins'] text-[44px] leading-tight font-semibold tracking-tight text-[#242528] lg:text-[48px]">
+            <p className="mt-1 font-sans text-[44px] leading-none font-bold tracking-tight text-[#242528] lg:text-[50px]">
               55%
             </p>
-            <div className="mt-2 h-2 w-[180px] rounded-full bg-[#f6f6f6] lg:w-[200px]">
-              <div className="h-full w-[55%] rounded-full bg-[#d4fb20]" />
+            <div className="mt-4 h-2 w-[180px] rounded-full bg-[#f0f0f2] lg:w-[210px]">
+              <div className="h-full w-[55%] rounded-full bg-[#cbfa04]" />
             </div>
           </div>
         </div>

@@ -160,8 +160,22 @@ export function Footer() {
 
         {/* Divider & Copyright */}
         <div className="mt-20 border-t border-[#ced0d3] pt-6">
-          <div className="flex flex-col items-center justify-between gap-4 font-sans text-[12px] text-[#242528] sm:flex-row">
-            <p>@ 2023 ByteSpace. All rights reserved.</p>
+          <div className="flex flex-col items-center justify-between gap-3 font-sans text-[12px] text-[#242528] sm:flex-row">
+            <p>© {new Date().getFullYear()} ByteSpace. All rights reserved.</p>
+
+            {/* Developer Credit */}
+            <p className="order-last text-center text-[#82868e] sm:order-none">
+              Developed by{" "}
+              <a
+                href="https://fa-m.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#003BE2] transition-opacity hover:opacity-80"
+              >
+                fa-m.dev
+              </a>
+            </p>
+
             <div className="flex items-center gap-6">
               <Link href="#privacy" className="hover:underline">
                 Privacy Policy

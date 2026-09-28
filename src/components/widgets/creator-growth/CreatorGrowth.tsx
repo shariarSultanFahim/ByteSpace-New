@@ -81,13 +81,13 @@ export function CreatorGrowth() {
             </div>
 
             {/* Floating 3D Wiggle Ornament */}
-            <div className="pointer-events-none absolute top-8 -right-6 z-30 hidden sm:block">
+            <div className="pointer-events-none absolute top-8 -right-6 z-30 hidden -rotate-60 sm:block">
               <Image
-                src="/images/hero-ornament-1.png"
+                src="/images/hero-ornament-2.png"
                 alt=""
                 width={160}
                 height={160}
-                className="size-32 drop-shadow-xl filter"
+                className="size-44 drop-shadow-xl filter"
               />
             </div>
 
@@ -154,11 +154,11 @@ export function CreatorGrowth() {
             {/* 3D Wiggle Ornament Right */}
             <div className="pointer-events-none absolute top-28 -right-4 z-20 hidden sm:block">
               <Image
-                src="/images/hero-ornament-1.png"
+                src="/images/hero-ornament-2.png"
                 alt=""
                 width={150}
                 height={150}
-                className="size-28 drop-shadow-lg filter"
+                className="size-44 drop-shadow-lg filter"
               />
             </div>
 
