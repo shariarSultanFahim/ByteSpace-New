@@ -71,7 +71,6 @@ export default function LoginPage() {
   return (
     <AuthLayout
       headingSubtitle="Sign in with ease"
-      headingTitle="Sign in with ease"
       description="Experience a seamless and efficient sign-in process that grants you instant access to a world of knowledge."
     >
       <div className="flex flex-col gap-[32px] sm:gap-[40px]">
