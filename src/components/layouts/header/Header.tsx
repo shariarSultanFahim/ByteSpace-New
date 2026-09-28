@@ -60,7 +60,7 @@ export function Header() {
             Courses
           </Link>
           <Link
-            href="/#creators"
+            href="/creators/purepearl-studio"
             className="font-normal text-[#f5f5f6] transition-opacity hover:opacity-80"
             data-node-id="1:1782"
           >
