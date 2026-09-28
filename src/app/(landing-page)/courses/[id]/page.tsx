@@ -43,7 +43,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
         Hero Banner:
         Blue background ends right behind the video.
       */}
-      <div className="relative w-full bg-[#003be2]">
+      <div className="relative w-full bg-brand-primary">
         {/* Background Grid Pattern */}
         <div className="pointer-events-none absolute inset-0 z-0 opacity-40">
           <Image

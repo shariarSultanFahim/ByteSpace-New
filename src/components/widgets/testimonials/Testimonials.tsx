@@ -9,8 +9,8 @@ export function Testimonials() {
       data-node-id="34:1175"
     >
       {/* Background Soft Blobs */}
-      <div className="pointer-events-none absolute top-20 -left-20 z-0 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-[#003be2]/10 via-[#d4fb20]/20 to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute top-10 -right-20 z-0 h-[600px] w-[600px] rounded-full bg-gradient-to-bl from-[#d4fb20]/25 via-emerald-100/30 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute top-20 -left-20 z-0 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-brand-primary/10 via-brand-lime/20 to-transparent blur-3xl" />
+      <div className="pointer-events-none absolute top-10 -right-20 z-0 h-[600px] w-[600px] rounded-full bg-gradient-to-bl from-brand-lime/25 via-emerald-100/30 to-transparent blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         {/* Heading Header */}
@@ -47,7 +47,7 @@ export function Testimonials() {
                 <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-black">
                   {item.name}
                 </h3>
-                <p className="mt-1 font-sans text-[16px] font-medium text-[#003be2] sm:text-[18px]">
+                <p className="mt-1 font-sans text-[16px] font-medium text-brand-primary sm:text-[18px]">
                   {item.role}
                 </p>
               </div>

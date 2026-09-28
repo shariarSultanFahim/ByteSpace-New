@@ -34,7 +34,7 @@ export function SearchHeader({ searchInput, setSearchInput, onSubmit }: SearchHe
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             placeholder="Search"
-            className="w-full bg-transparent font-sans text-[16px] text-[#242528] placeholder:text-[#82868e] focus:outline-none"
+            className="w-full bg-transparent font-sans text-[16px] text-text-ink placeholder:text-text-muted focus:outline-none"
           />
         </div>
 
@@ -42,7 +42,7 @@ export function SearchHeader({ searchInput, setSearchInput, onSubmit }: SearchHe
         <div className="relative">
           <button
             type="submit"
-            className="flex h-[48px] items-center gap-2 rounded-full bg-[#d4fb20] px-6 font-sans text-[16px] font-medium text-[#242528] shadow-md transition-transform hover:scale-105 active:scale-95"
+            className="flex h-[48px] items-center gap-2 rounded-full bg-brand-lime px-6 font-sans text-[16px] font-medium text-text-ink shadow-md transition-transform hover:scale-105 active:scale-95"
           >
             <span>Courses</span>
             <svg

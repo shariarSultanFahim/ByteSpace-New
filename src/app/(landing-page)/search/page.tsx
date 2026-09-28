@@ -30,7 +30,7 @@ function SearchContent() {
   return (
     <>
       {/* Top Blue Hero/Header Section */}
-      <div className="relative w-full overflow-hidden bg-[#003be2]">
+      <div className="relative w-full overflow-hidden bg-brand-primary">
         {/* Background Grid Pattern */}
         <div className="pointer-events-none absolute inset-0 z-0 flex justify-center opacity-40">
           <Image
@@ -83,7 +83,7 @@ export default function SearchPage() {
     <Suspense
       fallback={
         <div className="flex min-h-screen items-center justify-center bg-white">
-          <div className="size-10 animate-spin rounded-full border-4 border-[#003be2] border-t-transparent" />
+          <div className="size-10 animate-spin rounded-full border-4 border-brand-primary border-t-transparent" />
         </div>
       }
     >

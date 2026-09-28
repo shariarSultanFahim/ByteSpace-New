@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import {
   Categories,
   CreatorGrowth,
@@ -7,6 +9,13 @@ import {
   LogoPartners,
   Testimonials
 } from "@/widgets";
+
+export const metadata: Metadata = {
+  title: "ByteSpace — Learn from the Best Creators",
+  description:
+    "Unlock your creativity and grow your business with hundreds of online courses from top creators. Browse UI/UX, marketing, development, photography, and more.",
+  alternates: { canonical: "/" }
+};
 
 export default function Home() {
   return (

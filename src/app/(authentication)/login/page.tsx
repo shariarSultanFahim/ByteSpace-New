@@ -76,8 +76,8 @@ export default function LoginPage() {
       <div className="flex flex-col gap-[32px] sm:gap-[40px]">
         {/* Header */}
         <div>
-          <p className="font-sans text-[18px] leading-[1.6] text-[#003be2]">Sign In</p>
-          <h2 className="mt-1 font-['Poppins'] text-[36px] leading-[1.2] font-semibold tracking-[-0.44px] text-[#242528] sm:text-[44px]">
+          <p className="font-sans text-[18px] leading-[1.6] text-brand-primary">Sign In</p>
+          <h2 className="mt-1 font-['Poppins'] text-[36px] leading-[1.2] font-semibold tracking-[-0.44px] text-text-ink sm:text-[44px]">
             Welcome Back
           </h2>
         </div>
@@ -88,7 +88,7 @@ export default function LoginPage() {
           <div className="flex flex-col gap-[8px]">
             <label
               htmlFor="email"
-              className="font-sans text-[14px] leading-[1.2] font-medium text-[#242528]"
+              className="font-sans text-[14px] leading-[1.2] font-medium text-text-ink"
             >
               Email
             </label>
@@ -98,10 +98,10 @@ export default function LoginPage() {
               placeholder="designer@example.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className={`h-[52px] w-full rounded-[12px] border bg-white px-[24px] py-[12px] font-sans text-[16px] text-[#242528] placeholder-[#82868e] transition-colors outline-none ${
+              className={`h-[52px] w-full rounded-[12px] border bg-white px-[24px] py-[12px] font-sans text-[16px] text-text-ink placeholder-text-muted transition-colors outline-none ${
                 errors.email
                   ? "border-red-500 focus:border-red-500"
-                  : "border-[#e5e6e8] focus:border-[#003be2]"
+                  : "border-border-light focus:border-brand-primary"
               }`}
             />
             {errors.email && <p className="font-sans text-[12px] text-red-500">{errors.email}</p>}
@@ -111,7 +111,7 @@ export default function LoginPage() {
           <div className="flex flex-col gap-[8px]">
             <label
               htmlFor="password"
-              className="font-sans text-[14px] leading-[1.2] font-medium text-[#242528]"
+              className="font-sans text-[14px] leading-[1.2] font-medium text-text-ink"
             >
               Password
             </label>
@@ -121,10 +121,10 @@ export default function LoginPage() {
               placeholder="********"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className={`h-[52px] w-full rounded-[12px] border bg-white px-[24px] py-[12px] font-sans text-[16px] text-[#242528] placeholder-[#82868e] transition-colors outline-none ${
+              className={`h-[52px] w-full rounded-[12px] border bg-white px-[24px] py-[12px] font-sans text-[16px] text-text-ink placeholder-text-muted transition-colors outline-none ${
                 errors.password
                   ? "border-red-500 focus:border-red-500"
-                  : "border-[#e5e6e8] focus:border-[#003be2]"
+                  : "border-border-light focus:border-brand-primary"
               }`}
             />
             {errors.password && (
@@ -137,7 +137,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="flex h-[46px] items-center justify-center rounded-[24px] bg-[#d4fb20] px-[24px] py-[12px] font-sans text-[18px] leading-[1.2] font-medium text-[#242528] transition-transform hover:scale-105 active:scale-95 disabled:opacity-50"
+              className="flex h-[46px] items-center justify-center rounded-[24px] bg-brand-lime px-[24px] py-[12px] font-sans text-[18px] leading-[1.2] font-medium text-text-ink transition-transform hover:scale-105 active:scale-95 disabled:opacity-50"
             >
               {isLoading ? "Signing In..." : "Sign In"}
             </button>
@@ -146,8 +146,8 @@ export default function LoginPage() {
 
         {/* Divider with "or" */}
         <div className="relative my-2 flex items-center justify-center">
-          <div className="w-full border-t border-[#ced0d3]" />
-          <span className="absolute bg-white px-3 font-sans text-[16px] text-[#82868e]">or</span>
+          <div className="w-full border-t border-border-soft" />
+          <span className="absolute bg-white px-3 font-sans text-[16px] text-text-muted">or</span>
         </div>
 
         {/* Social Buttons: Facebook & Google (72x72 square rounded frames) */}
@@ -155,14 +155,14 @@ export default function LoginPage() {
           <button
             type="button"
             onClick={() => handleSocialClick("facebook")}
-            className="flex size-[72px] items-center justify-center rounded-[16px] border border-[#e5e6e8] bg-white transition-all hover:bg-[#f9fafb] hover:shadow-md"
+            className="flex size-[72px] items-center justify-center rounded-[16px] border border-border-light bg-white transition-all hover:bg-[#f9fafb] hover:shadow-md"
           >
             <Image src="/images/facebook.svg" alt="Facebook" width={32} height={32} />
           </button>
           <button
             type="button"
             onClick={() => handleSocialClick("google")}
-            className="flex size-[72px] items-center justify-center rounded-[16px] border border-[#e5e6e8] bg-white transition-all hover:bg-[#f9fafb] hover:shadow-md"
+            className="flex size-[72px] items-center justify-center rounded-[16px] border border-border-light bg-white transition-all hover:bg-[#f9fafb] hover:shadow-md"
           >
             <Image src="/images/google.svg" alt="Google" width={32} height={32} />
           </button>
@@ -170,8 +170,8 @@ export default function LoginPage() {
 
         {/* Link to Register */}
         <div className="mt-4 flex items-center justify-center gap-1 font-sans text-[16px] leading-[1.6]">
-          <span className="text-[#4b4c53]">New user?</span>
-          <Link href="/register" className="font-medium text-[#003be2] hover:underline">
+          <span className="text-text-subtle">New user?</span>
+          <Link href="/register" className="font-medium text-brand-primary hover:underline">
             Create an account
           </Link>
         </div>

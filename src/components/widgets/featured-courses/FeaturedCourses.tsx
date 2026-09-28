@@ -22,7 +22,7 @@ export function FeaturedCourses() {
           <h2 className="font-['Poppins'] text-[32px] leading-[1.2] font-semibold tracking-[-0.44px] text-[#040819] sm:text-[40px] lg:text-[44px]">
             Discover Your Passion, Build Your Skills
           </h2>
-          <p className="mt-4 font-sans text-[16px] leading-[1.6] text-[#82868e] sm:text-[18px]">
+          <p className="mt-4 font-sans text-[16px] leading-[1.6] text-text-muted sm:text-[18px]">
             At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety
             of courses across different fields, from technology to the arts, and make a difference
             in your career and life.
@@ -42,8 +42,8 @@ export function FeaturedCourses() {
                   onClick={() => setActiveCategory(cat)}
                   className={`rounded-full px-5 py-2.5 font-sans text-[15px] font-medium transition-all sm:text-[16px] ${
                     isActive
-                      ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-                      : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#eaebee]"
+                      ? "bg-brand-lime text-text-ink shadow-sm"
+                      : "bg-surface-subtle text-text-subtle hover:bg-border-light"
                   }`}
                 >
                   {cat}
@@ -63,8 +63,8 @@ export function FeaturedCourses() {
                   onClick={() => setActiveCategory(cat)}
                   className={`rounded-full px-5 py-2.5 font-sans text-[15px] font-medium transition-all sm:text-[16px] ${
                     isActive
-                      ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-                      : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#eaebee]"
+                      ? "bg-brand-lime text-text-ink shadow-sm"
+                      : "bg-surface-subtle text-text-subtle hover:bg-border-light"
                   }`}
                 >
                   {cat}
@@ -84,8 +84,8 @@ export function FeaturedCourses() {
                   onClick={() => setActiveCategory(cat)}
                   className={`rounded-full px-5 py-2.5 font-sans text-[15px] font-medium transition-all sm:text-[16px] ${
                     isActive
-                      ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-                      : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#eaebee]"
+                      ? "bg-brand-lime text-text-ink shadow-sm"
+                      : "bg-surface-subtle text-text-subtle hover:bg-border-light"
                   }`}
                 >
                   {cat}
@@ -94,7 +94,7 @@ export function FeaturedCourses() {
             })}
             <button
               type="button"
-              className="px-3 py-2 font-sans text-[15px] font-medium text-[#242528] hover:text-[#003be2]"
+              className="px-3 py-2 font-sans text-[15px] font-medium text-text-ink hover:text-brand-primary"
             >
               + More
             </button>

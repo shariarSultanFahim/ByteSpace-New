@@ -31,7 +31,7 @@ export function SearchFilters({
           <button
             type="button"
             onClick={onClearFilters}
-            className="flex h-[42px] items-center gap-2 rounded-full border border-[#ced0d3] bg-white px-5 font-sans text-[14px] font-medium text-[#242528] transition-colors hover:bg-[#f5f5f6]"
+            className="flex h-[42px] items-center gap-2 rounded-full border border-border-soft bg-white px-5 font-sans text-[14px] font-medium text-text-ink transition-colors hover:bg-surface-subtle"
           >
             <svg
               width="16"
@@ -53,7 +53,7 @@ export function SearchFilters({
             <select
               value={selectedLevel}
               onChange={(e) => onSelectLevel(e.target.value)}
-              className="flex h-[42px] cursor-pointer appearance-none items-center rounded-full border border-[#ced0d3] bg-white pr-5 pl-9 font-sans text-[14px] font-medium text-[#242528] transition-colors hover:bg-[#f5f5f6] focus:outline-none"
+              className="flex h-[42px] cursor-pointer appearance-none items-center rounded-full border border-border-soft bg-white pr-5 pl-9 font-sans text-[14px] font-medium text-text-ink transition-colors hover:bg-surface-subtle focus:outline-none"
             >
               <option value="All">Level</option>
               <option value="Beginner">Beginner</option>
@@ -61,7 +61,7 @@ export function SearchFilters({
               <option value="Advanced">Advanced</option>
             </select>
             {/* Level Icon (bars) */}
-            <div className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-[#242528]">
+            <div className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-text-ink">
               <svg
                 width="14"
                 height="14"
@@ -84,7 +84,7 @@ export function SearchFilters({
             <select
               value={selectedCategory}
               onChange={(e) => onSelectCategory(e.target.value)}
-              className="flex h-[42px] cursor-pointer appearance-none items-center rounded-full border border-[#ced0d3] bg-white pr-5 pl-9 font-sans text-[14px] font-medium text-[#242528] transition-colors hover:bg-[#f5f5f6] focus:outline-none"
+              className="flex h-[42px] cursor-pointer appearance-none items-center rounded-full border border-border-soft bg-white pr-5 pl-9 font-sans text-[14px] font-medium text-text-ink transition-colors hover:bg-surface-subtle focus:outline-none"
             >
               <option value="Featured">Category</option>
               {SEARCH_CATEGORIES.map((cat) => (
@@ -94,7 +94,7 @@ export function SearchFilters({
               ))}
             </select>
             {/* Category Icon */}
-            <div className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-[#242528]">
+            <div className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-text-ink">
               <svg
                 width="14"
                 height="14"
@@ -122,14 +122,14 @@ export function SearchFilters({
           <select
             value={sortBy}
             onChange={(e) => onSortChange(e.target.value)}
-            className="flex h-[42px] cursor-pointer appearance-none items-center rounded-full border border-[#ced0d3] bg-white pr-6 pl-9 font-sans text-[14px] font-medium text-[#242528] transition-colors hover:bg-[#f5f5f6] focus:outline-none"
+            className="flex h-[42px] cursor-pointer appearance-none items-center rounded-full border border-border-soft bg-white pr-6 pl-9 font-sans text-[14px] font-medium text-text-ink transition-colors hover:bg-surface-subtle focus:outline-none"
           >
             <option value="Most relevant">Most relevant</option>
             <option value="Highest rated">Highest rated</option>
             <option value="Title A-Z">Title A-Z</option>
           </select>
           {/* Sort Icon */}
-          <div className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-[#242528]">
+          <div className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-text-ink">
             <svg
               width="14"
               height="14"
@@ -159,8 +159,8 @@ export function SearchFilters({
               onClick={() => onSelectCategory(category)}
               className={`shrink-0 rounded-full px-5 py-2.5 font-sans text-[14px] font-medium transition-all ${
                 isSelected
-                  ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-                  : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#e5e6e8]"
+                  ? "bg-brand-lime text-text-ink shadow-sm"
+                  : "bg-surface-subtle text-text-subtle hover:bg-border-light"
               }`}
             >
               {category}

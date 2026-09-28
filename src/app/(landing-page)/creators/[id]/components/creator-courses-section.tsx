@@ -68,7 +68,7 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
           <button
             type="button"
             onClick={handleClearFilters}
-            className="flex h-[44px] items-center gap-2 rounded-full border border-[#ced0d3] bg-white px-5 font-sans text-[16px] font-medium text-[#4b4c53] transition-colors hover:bg-[#f5f5f6]"
+            className="flex h-[44px] items-center gap-2 rounded-full border border-border-soft bg-white px-5 font-sans text-[16px] font-medium text-text-subtle transition-colors hover:bg-surface-subtle"
           >
             <svg
               width="18"
@@ -90,7 +90,7 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
             <select
               value={selectedLevel}
               onChange={(e) => setSelectedLevel(e.target.value)}
-              className="flex h-[44px] cursor-pointer appearance-none items-center rounded-full border border-[#ced0d3] bg-white pr-6 pl-10 font-sans text-[16px] font-medium text-[#4b4c53] transition-colors hover:bg-[#f5f5f6] focus:outline-none"
+              className="flex h-[44px] cursor-pointer appearance-none items-center rounded-full border border-border-soft bg-white pr-6 pl-10 font-sans text-[16px] font-medium text-text-subtle transition-colors hover:bg-surface-subtle focus:outline-none"
             >
               <option value="All">Level</option>
               <option value="Beginner">Beginner</option>
@@ -106,7 +106,7 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-[#4b4c53]"
+              className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-text-subtle"
             >
               <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
             </svg>
@@ -117,7 +117,7 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="flex h-[44px] cursor-pointer appearance-none items-center rounded-full border border-[#ced0d3] bg-white pr-6 pl-10 font-sans text-[16px] font-medium text-[#4b4c53] transition-colors hover:bg-[#f5f5f6] focus:outline-none"
+              className="flex h-[44px] cursor-pointer appearance-none items-center rounded-full border border-border-soft bg-white pr-6 pl-10 font-sans text-[16px] font-medium text-text-subtle transition-colors hover:bg-surface-subtle focus:outline-none"
             >
               <option value="All">Category</option>
               {categories
@@ -137,7 +137,7 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-[#4b4c53]"
+              className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-text-subtle"
             >
               <rect x="3" y="3" width="7" height="7" />
               <rect x="14" y="3" width="7" height="7" />
@@ -152,7 +152,7 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="flex h-[44px] cursor-pointer appearance-none items-center rounded-full border border-[#ced0d3] bg-white pr-8 pl-10 font-sans text-[16px] font-medium text-[#4b4c53] transition-colors hover:bg-[#f5f5f6] focus:outline-none"
+            className="flex h-[44px] cursor-pointer appearance-none items-center rounded-full border border-border-soft bg-white pr-8 pl-10 font-sans text-[16px] font-medium text-text-subtle transition-colors hover:bg-surface-subtle focus:outline-none"
           >
             <option value="Most relevant">Most relevant</option>
             <option value="Rating">Rating</option>
@@ -168,7 +168,7 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-[#4b4c53]"
+            className="pointer-events-none absolute top-1/2 left-3.5 -translate-y-1/2 text-text-subtle"
           >
             <line x1="21" y1="10" x2="3" y2="10" />
             <line x1="21" y1="6" x2="3" y2="6" />
@@ -180,17 +180,17 @@ export function CreatorCoursesSection({ courses }: CreatorCoursesSectionProps) {
 
       {/* Courses Grid: 3 columns on desktop, 2 on tablet, 1 on mobile */}
       {filteredCourses.length === 0 ? (
-        <div className="mt-16 flex flex-col items-center justify-center rounded-[32px] border border-dashed border-[#ced0d3] py-20 text-center">
+        <div className="mt-16 flex flex-col items-center justify-center rounded-[32px] border border-dashed border-border-soft py-20 text-center">
           <h3 className="font-['Poppins'] text-[24px] font-semibold text-[#040819]">
             No courses found
           </h3>
-          <p className="mt-2 max-w-[420px] font-sans text-[15px] text-[#82868e]">
+          <p className="mt-2 max-w-[420px] font-sans text-[15px] text-text-muted">
             No courses from this creator matched the selected filters.
           </p>
           <button
             type="button"
             onClick={handleClearFilters}
-            className="mt-6 rounded-full bg-[#d4fb20] px-6 py-2.5 font-sans text-[15px] font-semibold text-[#242528] shadow-sm transition-transform hover:scale-105 active:scale-95"
+            className="mt-6 rounded-full bg-brand-lime px-6 py-2.5 font-sans text-[15px] font-semibold text-text-ink shadow-sm transition-transform hover:scale-105 active:scale-95"
           >
             Reset Filters
           </button>

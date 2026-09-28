@@ -13,7 +13,7 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       {/* Blue Hero with Grid Pattern, Header & 404 Visual Content */}
-      <div className="relative flex flex-1 flex-col overflow-hidden bg-[#003be2]">
+      <div className="relative flex flex-1 flex-col overflow-hidden bg-brand-primary">
         {/* Background Grid Pattern */}
         <div className="pointer-events-none absolute inset-0 z-0 opacity-40">
           <Image
@@ -51,13 +51,13 @@ export default function NotFound() {
                 The page you are looking for doesn’t exist
               </h2>
 
-              <p className="max-w-[620px] font-sans text-[16px] leading-[1.6] text-[#e5e6e8] sm:text-[18px]">
+              <p className="max-w-[620px] font-sans text-[16px] leading-[1.6] text-border-light sm:text-[18px]">
                 Try to use a correct url or go back to homepage to start again
               </p>
 
               <Link
                 href="/"
-                className="mt-2 inline-flex h-[52px] items-center justify-center rounded-[24px] bg-[#d4fb20] px-8 font-sans text-[18px] font-medium text-[#242528] shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
+                className="mt-2 inline-flex h-[52px] items-center justify-center rounded-[24px] bg-brand-lime px-8 font-sans text-[18px] font-medium text-text-ink shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
               >
                 Back to Home
               </Link>

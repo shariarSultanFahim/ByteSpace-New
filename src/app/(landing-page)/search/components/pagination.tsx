@@ -16,7 +16,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         type="button"
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
-        className="flex size-10 items-center justify-center rounded-full border border-[#ced0d3] transition-colors hover:bg-[#f5f5f6] disabled:pointer-events-none disabled:opacity-40"
+        className="flex size-10 items-center justify-center rounded-full border border-border-soft transition-colors hover:bg-surface-subtle disabled:pointer-events-none disabled:opacity-40"
         aria-label="Previous Page"
       >
         <svg
@@ -39,8 +39,8 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
           onClick={() => onPageChange(pageNum)}
           className={`flex size-10 items-center justify-center rounded-full font-sans text-[15px] font-medium transition-all ${
             currentPage === pageNum
-              ? "bg-[#003be2] text-white shadow-md"
-              : "text-[#4b4c53] hover:bg-[#f5f5f6]"
+              ? "bg-brand-primary text-white shadow-md"
+              : "text-text-subtle hover:bg-surface-subtle"
           }`}
         >
           {pageNum}
@@ -52,7 +52,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         type="button"
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
-        className="flex size-10 items-center justify-center rounded-full border border-[#ced0d3] transition-colors hover:bg-[#f5f5f6] disabled:pointer-events-none disabled:opacity-40"
+        className="flex size-10 items-center justify-center rounded-full border border-border-soft transition-colors hover:bg-surface-subtle disabled:pointer-events-none disabled:opacity-40"
         aria-label="Next Page"
       >
         <svg

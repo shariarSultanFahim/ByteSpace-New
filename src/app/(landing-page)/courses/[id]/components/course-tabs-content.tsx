@@ -31,8 +31,8 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
           onClick={() => setActiveTab("about")}
           className={`rounded-full px-6 py-3 font-sans text-[16px] font-medium transition-all ${
             activeTab === "about"
-              ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-              : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#e5e6e8]"
+              ? "bg-brand-lime text-text-ink shadow-sm"
+              : "bg-surface-subtle text-text-subtle hover:bg-border-light"
           }`}
         >
           About
@@ -43,8 +43,8 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
           onClick={() => setActiveTab("lessons")}
           className={`rounded-full px-6 py-3 font-sans text-[16px] font-medium transition-all ${
             activeTab === "lessons"
-              ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-              : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#e5e6e8]"
+              ? "bg-brand-lime text-text-ink shadow-sm"
+              : "bg-surface-subtle text-text-subtle hover:bg-border-light"
           }`}
         >
           Lesson
@@ -55,8 +55,8 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
           onClick={() => setActiveTab("reviews")}
           className={`rounded-full px-6 py-3 font-sans text-[16px] font-medium transition-all ${
             activeTab === "reviews"
-              ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-              : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#e5e6e8]"
+              ? "bg-brand-lime text-text-ink shadow-sm"
+              : "bg-surface-subtle text-text-subtle hover:bg-border-light"
           }`}
         >
           Reviews
@@ -70,10 +70,10 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
         <div className="flex flex-col gap-8">
           {/* Description Section */}
           <div className="flex flex-col gap-4">
-            <h2 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-[#242528]">
+            <h2 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-text-ink">
               Description
             </h2>
-            <div className="space-y-4 font-sans text-[16px] leading-[1.6] text-[#4b4c53]">
+            <div className="space-y-4 font-sans text-[16px] leading-[1.6] text-text-subtle">
               {course.description.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -82,7 +82,7 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
 
           {/* Sneak Peak Section */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-[#242528]">
+            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-text-ink">
               Sneak Peak
             </h3>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -104,14 +104,14 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
 
           {/* Key Points Section */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-[#242528]">
+            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-text-ink">
               Key Points
             </h3>
             <div className="flex flex-col gap-3">
               {course.keyPoints.map((point) => (
                 <div key={point} className="flex items-center gap-3">
                   {/* Blue Check Circle Icon */}
-                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#003be2] text-white">
+                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-white">
                     <svg
                       width="14"
                       height="14"
@@ -125,7 +125,7 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                   </div>
-                  <span className="font-sans text-[16px] text-[#4b4c53]">{point}</span>
+                  <span className="font-sans text-[16px] text-text-subtle">{point}</span>
                 </div>
               ))}
             </div>
@@ -140,10 +140,10 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
         <div className="flex flex-col gap-8">
           {/* Explore the Modules */}
           <div className="flex flex-col gap-3">
-            <h2 className="font-['Poppins'] text-[22px] font-semibold tracking-[-0.2px] text-[#242528]">
+            <h2 className="font-['Poppins'] text-[22px] font-semibold tracking-[-0.2px] text-text-ink">
               Explore the Modules
             </h2>
-            <p className="font-sans text-[15px] leading-[1.6] text-[#4b4c53]">
+            <p className="font-sans text-[15px] leading-[1.6] text-text-subtle">
               Immerse yourself in the course content as we break down each module into comprehensive
               lessons, providing practical insights and hands-on experiences.
             </p>
@@ -151,7 +151,7 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
 
           {/* Lesson List */}
           <div className="flex flex-col gap-6">
-            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-[#242528]">
+            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-text-ink">
               Lesson List
             </h3>
 
@@ -159,7 +159,7 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
               {course.curriculum.map((module) => (
                 <div key={module.id} className="flex items-start gap-4">
                   {/* Rounded Lime Video Icon */}
-                  <div className="flex size-[54px] shrink-0 items-center justify-center rounded-[18px] bg-[#d4fb20]">
+                  <div className="flex size-[54px] shrink-0 items-center justify-center rounded-[18px] bg-brand-lime">
                     <svg
                       width="24"
                       height="24"
@@ -177,10 +177,10 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
 
                   {/* Text Information */}
                   <div className="flex flex-col gap-1">
-                    <h4 className="font-['Poppins'] text-[16px] font-semibold text-[#242528]">
+                    <h4 className="font-['Poppins'] text-[16px] font-semibold text-text-ink">
                       {module.title}
                     </h4>
-                    <p className="font-sans text-[14px] leading-[1.5] text-[#4b4c53]">
+                    <p className="font-sans text-[14px] leading-[1.5] text-text-subtle">
                       {module.description}
                     </p>
                   </div>
@@ -191,10 +191,10 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
 
           {/* Lesson Content */}
           <div className="flex flex-col gap-3">
-            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-[#242528]">
+            <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-text-ink">
               Lesson Content
             </h3>
-            <p className="font-sans text-[15px] leading-[1.6] text-[#4b4c53]">
+            <p className="font-sans text-[15px] leading-[1.6] text-text-subtle">
               Engage with each lesson through captivating video content, detailed textual
               explanations, and interactive elements. Download resources, complete assignments, and
               test your understanding with quizzes.
@@ -204,24 +204,24 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
           {/* Lesson Progress Tracking */}
           <div className="flex flex-col gap-4">
             <div>
-              <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-[#242528]">
+              <h3 className="font-['Poppins'] text-[20px] font-semibold tracking-[-0.2px] text-text-ink">
                 Lesson Progress Tracking
               </h3>
-              <p className="mt-2 font-sans text-[15px] leading-[1.6] text-[#4b4c53]">
+              <p className="mt-2 font-sans text-[15px] leading-[1.6] text-text-subtle">
                 Witness your growth as you complete lessons, with an intuitive progress tracking
                 feature guiding you through your learning journey.
               </p>
             </div>
 
             {/* Progress Card */}
-            <div className="rounded-[20px] border border-[#ced0d3] bg-white p-6 shadow-sm">
-              <span className="font-sans text-[13px] font-medium text-[#4b4c53]">
+            <div className="rounded-[20px] border border-border-soft bg-white p-6 shadow-sm">
+              <span className="font-sans text-[13px] font-medium text-text-subtle">
                 Learning Progress
               </span>
-              <div className="mt-1 font-['Poppins'] text-[32px] font-bold text-[#242528]">55%</div>
+              <div className="mt-1 font-['Poppins'] text-[32px] font-bold text-text-ink">55%</div>
               {/* Progress bar with lime fill */}
-              <div className="mt-4 h-2.5 w-full overflow-hidden rounded-full bg-[#e5e6e8]">
-                <div className="h-full w-[55%] rounded-full bg-[#d4fb20]" />
+              <div className="mt-4 h-2.5 w-full overflow-hidden rounded-full bg-border-light">
+                <div className="h-full w-[55%] rounded-full bg-brand-lime" />
               </div>
             </div>
           </div>
@@ -235,10 +235,10 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
         <div className="flex flex-col gap-8">
           {/* Header */}
           <div className="flex flex-col gap-3">
-            <h2 className="font-['Poppins'] text-[22px] font-semibold tracking-[-0.2px] text-[#242528]">
+            <h2 className="font-['Poppins'] text-[22px] font-semibold tracking-[-0.2px] text-text-ink">
               What Learners Are Saying
             </h2>
-            <p className="font-sans text-[15px] leading-[1.6] text-[#4b4c53]">
+            <p className="font-sans text-[15px] leading-[1.6] text-text-subtle">
               Discover what our learners have to say about their experience with &lsquo;Build
               Digital Assets: A Comprehensive Guide.&rsquo; Read reviews and ratings from
               individuals who have embarked on the transformative journey of mastering digital asset
@@ -247,11 +247,11 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
           </div>
 
           {/* Overall Rating & Breakdown Card */}
-          <div className="flex flex-col gap-6 rounded-[24px] border border-[#ced0d3] bg-white p-6 sm:flex-row sm:items-center sm:gap-10 sm:p-8">
+          <div className="flex flex-col gap-6 rounded-[24px] border border-border-soft bg-white p-6 sm:flex-row sm:items-center sm:gap-10 sm:p-8">
             {/* Big Lime Rating Badge */}
-            <div className="flex size-[120px] shrink-0 flex-col items-center justify-center rounded-[20px] bg-[#d4fb20] text-center shadow-sm">
-              <span className="font-sans text-[13px] font-medium text-[#242528]">Ratings</span>
-              <span className="font-['Poppins'] text-[38px] leading-none font-bold text-[#242528]">
+            <div className="flex size-[120px] shrink-0 flex-col items-center justify-center rounded-[20px] bg-brand-lime text-center shadow-sm">
+              <span className="font-sans text-[13px] font-medium text-text-ink">Ratings</span>
+              <span className="font-['Poppins'] text-[38px] leading-none font-bold text-text-ink">
                 4.7
               </span>
             </div>
@@ -262,17 +262,17 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
                 const count = ratingCounts[stars as keyof typeof ratingCounts];
                 const pct = Math.round((count / totalReviewCount) * 100);
                 return (
-                  <div key={stars} className="flex items-center gap-4 text-[13px] text-[#4b4c53]">
+                  <div key={stars} className="flex items-center gap-4 text-[13px] text-text-subtle">
                     {/* Bar */}
-                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#e5e6e8]">
+                    <div className="h-2 flex-1 overflow-hidden rounded-full bg-border-light">
                       <div
-                        className="h-full rounded-full bg-[#d4fb20]"
+                        className="h-full rounded-full bg-brand-lime"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
 
                     {/* Stars */}
-                    <div className="flex items-center gap-0.5 text-[#242528]">
+                    <div className="flex items-center gap-0.5 text-text-ink">
                       {Array.from({ length: 5 }).map((_, idx) => (
                         <span key={idx} className="text-[14px]">
                           ★
@@ -281,7 +281,7 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
                     </div>
 
                     {/* Count */}
-                    <span className="w-8 text-right font-medium text-[#4b4c53]">{count}</span>
+                    <span className="w-8 text-right font-medium text-text-subtle">{count}</span>
                   </div>
                 );
               })}
@@ -290,7 +290,7 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
 
           {/* Individual Reviews Filter Pills */}
           <div className="flex flex-col gap-4">
-            <h3 className="font-['Poppins'] text-[18px] font-semibold text-[#242528]">
+            <h3 className="font-['Poppins'] text-[18px] font-semibold text-text-ink">
               Individual Reviews:
             </h3>
 
@@ -304,8 +304,8 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
                     onClick={() => setSelectedReviewFilter(label)}
                     className={`flex items-center gap-1.5 rounded-full px-5 py-2 font-sans text-[14px] font-medium transition-all ${
                       isSelected
-                        ? "bg-[#d4fb20] text-[#242528] shadow-sm"
-                        : "bg-[#f5f5f6] text-[#4b4c53] hover:bg-[#e5e6e8]"
+                        ? "bg-brand-lime text-text-ink shadow-sm"
+                        : "bg-surface-subtle text-text-subtle hover:bg-border-light"
                     }`}
                   >
                     {label !== "All rating" && <span>★</span>}
@@ -321,12 +321,12 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
             {course.reviews?.map((review) => (
               <div
                 key={review.id}
-                className="flex flex-col gap-3 rounded-[24px] border border-[#ced0d3] bg-white p-6 shadow-sm"
+                className="flex flex-col gap-3 rounded-[24px] border border-border-soft bg-white p-6 shadow-sm"
               >
                 {/* Author Info */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="relative size-[44px] shrink-0 overflow-hidden rounded-full bg-[#f5f5f6]">
+                    <div className="relative size-[44px] shrink-0 overflow-hidden rounded-full bg-surface-subtle">
                       <Image
                         src={review.avatar || "/images/author-purepearl.png"}
                         alt={review.author}
@@ -335,20 +335,20 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
                       />
                     </div>
                     <div>
-                      <h4 className="font-['Poppins'] text-[16px] font-semibold text-[#242528]">
+                      <h4 className="font-['Poppins'] text-[16px] font-semibold text-text-ink">
                         {review.author}
                       </h4>
                       {review.role && (
-                        <p className="font-sans text-[13px] text-[#4b4c53]">{review.role}</p>
+                        <p className="font-sans text-[13px] text-text-subtle">{review.role}</p>
                       )}
                     </div>
                   </div>
 
-                  <span className="font-sans text-[13px] text-[#82868e]">{review.date}</span>
+                  <span className="font-sans text-[13px] text-text-muted">{review.date}</span>
                 </div>
 
                 {/* Stars */}
-                <div className="flex items-center gap-1 text-[#242528]">
+                <div className="flex items-center gap-1 text-text-ink">
                   {Array.from({ length: review.rating }).map((_, i) => (
                     <span key={i} className="text-[16px]">
                       ★
@@ -357,7 +357,7 @@ export function CourseTabsContent({ course }: CourseTabsContentProps) {
                 </div>
 
                 {/* Comment */}
-                <p className="font-sans text-[15px] leading-[1.6] text-[#4b4c53]">
+                <p className="font-sans text-[15px] leading-[1.6] text-text-subtle">
                   {review.comment}
                 </p>
               </div>

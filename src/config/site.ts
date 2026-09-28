@@ -1,19 +1,30 @@
 import type { SiteConfig } from "@/types/site-config";
 import { env } from "@/env";
 
-// FIXME: Update site branding, theme color, social links, and OG image
 export const siteConfig: SiteConfig = {
-  name: "Next.js 16 Boilerplate",
-  description: "Production-ready Next.js 16+ starter built with Tailwind CSS 4 and TypeScript.",
+  name: "ByteSpace",
+  description:
+    "Unlock your creativity and grow your business with hundreds of online courses from top creators. Browse UI/UX, marketing, development, and more.",
   url: env.NEXT_PUBLIC_SITE_URL,
-  author: "",
+  author: "Shariar Sultan Fahim",
   locale: "en",
-  themeColor: "#ffffff",
-  keywords: ["nextjs", "typescript", "tailwindcss", "boilerplate", "starter"],
+  themeColor: "#003be2",
+  keywords: [
+    "online courses",
+    "learn online",
+    "UI/UX design courses",
+    "web development courses",
+    "digital marketing courses",
+    "photography courses",
+    "online learning platform",
+    "courses for creators",
+    "ByteSpace courses",
+    "creative courses online"
+  ],
   social: {
     twitter: "",
-    github: "",
-    linkedin: ""
+    github: "https://github.com/shariarSultanFahim",
+    linkedin: "https://www.linkedin.com/in/shariarsultan"
   },
-  ogImage: "/og.jpg"
+  ogImage: "/web-app-manifest-512x512.png"
 } as const;
