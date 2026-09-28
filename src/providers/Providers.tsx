@@ -2,14 +2,16 @@
 
 import type { ReactNode } from "react";
 
-import { CounterProvider, QueryProvider, ThemeProvider } from "@/providers";
+import { AuthProvider, CounterProvider, QueryProvider, ThemeProvider } from "@/providers";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider>
-      <CounterProvider>
-        <QueryProvider>{children}</QueryProvider>
-      </CounterProvider>
+      <AuthProvider>
+        <CounterProvider>
+          <QueryProvider>{children}</QueryProvider>
+        </CounterProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
