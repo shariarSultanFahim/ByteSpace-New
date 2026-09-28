@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface AuthLayoutProps {
-  headingTitle: string;
+  headingTitle?: string;
   headingSubtitle: string;
   description: string;
   children: ReactNode;
 }
 
 export function AuthLayout({
-  headingTitle,
+  headingTitle: _headingTitle,
   headingSubtitle,
   description,
   children
