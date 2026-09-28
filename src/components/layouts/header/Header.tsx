@@ -53,7 +53,7 @@ export function Header() {
             Home
           </Link>
           <Link
-            href="/#courses"
+            href="/search"
             className="font-normal text-[#f5f5f6] transition-opacity hover:opacity-80"
             data-node-id="1:1781"
           >

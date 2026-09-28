@@ -3,18 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface AuthLayoutProps {
-  headingTitle?: string;
   headingSubtitle: string;
   description: string;
   children: ReactNode;
 }
 
-export function AuthLayout({
-  headingTitle: _headingTitle,
-  headingSubtitle,
-  description,
-  children
-}: AuthLayoutProps) {
+export function AuthLayout({ headingSubtitle, description, children }: AuthLayoutProps) {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#003be2]">
       {/* 120px Grid overlay matching Figma Group 4 */}

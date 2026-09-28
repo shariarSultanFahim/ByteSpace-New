@@ -72,7 +72,6 @@ export default function RegisterPage() {
   return (
     <AuthLayout
       headingSubtitle="Sign up and come in"
-      headingTitle="Sign up and come in"
       description="The registration process is straightforward, uncomplicated, and efficient, allowing users to sign up quickly, easily, and at no cost"
     >
       <div className="flex flex-col gap-[32px] sm:gap-[40px]">
