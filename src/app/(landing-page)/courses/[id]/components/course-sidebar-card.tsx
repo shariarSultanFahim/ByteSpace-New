@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { toast } from "sonner";
 
@@ -19,10 +20,6 @@ const TOP_PREVIEW_LESSONS = [
 export function CourseSidebarCard({ course }: CourseSidebarCardProps) {
   const handleEnroll = () => {
     toast.success(`Enrolled in ${course.title}! Welcome to the course.`);
-  };
-
-  const handleProfileClick = () => {
-    toast.info(`Creator profile: ${course.author}`);
   };
 
   return (
@@ -126,13 +123,12 @@ export function CourseSidebarCard({ course }: CourseSidebarCardProps) {
             Ready to Dive In? Enroll Now and Start Building Your Digital Future!
           </p>
 
-          <button
-            type="button"
-            onClick={handleProfileClick}
+          <Link
+            href="/creators/purepearl-studio"
             className="flex h-[42px] items-center justify-center rounded-[24px] border border-[#ced0d3] px-4 font-sans text-[16px] font-medium text-[#4b4c53] transition-colors hover:bg-[#f5f5f6]"
           >
             See Full Profile
-          </button>
+          </Link>
         </div>
       </div>
     </aside>
