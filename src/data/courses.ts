@@ -1,4 +1,4 @@
-import type { CourseCard } from "@/types";
+import type { CourseCard, CourseDetail } from "@/types";
 
 export const SEARCH_CATEGORIES: string[] = [
   "Featured",
@@ -472,3 +472,164 @@ export const ALL_COURSES_DATA: CourseCard[] = [
     category: "Cooking"
   }
 ];
+
+export const DEFAULT_COURSE_DETAIL: CourseDetail = {
+  id: "course-2",
+  title: "Build Digital Asset: A Comprehensive Guide",
+  subtitle: "Unlock the Power of Digital Creation with Expert Guidance",
+  author: "purepearl studio",
+  authorRole: "Professional Creator",
+  authorBio: "Ready to Dive In? Enroll Now and Start Building Your Digital Future!",
+  authorAvatar: "/images/author-purepearl.png",
+  rating: 4.8,
+  reviewsCount: 172,
+  studentsCount: "199 Students",
+  price: "$25",
+  period: "/lifetime",
+  level: "Intermediate",
+  totalLessonsText: "112 Lessons",
+  totalHoursText: "24 hours",
+  videoPreviewImage: "/images/course-detail-video-cover.png",
+  description: [
+    'Embark on an enlightening exploration into the world of digital creation with our comprehensive course, "Build Digital Assets: A Comprehensive Guide." This transformative learning experience invites you to delve deep into the intricacies of crafting impactful digital content. From laying the groundwork with foundational concepts to mastering advanced techniques, this guide is meticulously curated to empower you with the skills essential for navigating the dynamic landscape of digital asset creation.',
+    "In the initial modules, you'll establish a solid foundation by immersing yourself in the foundational concepts that form the backbone of digital asset creation. Understand the fundamental elements that constitute compelling digital content and gain proficiency in leveraging these elements to communicate effectively in the digital realm.",
+    "As you progress through the course, you'll ascend to higher levels of expertise, delving into the nuances of design principles that drive impactful creations. Uncover the secrets behind effective visual communication, exploring color theory, typography, and layout strategies that elevate your digital assets to new heights. Engage in hands-on exercises that reinforce your understanding, allowing you to apply these principles in practical scenarios."
+  ],
+  sneakPeakImages: [
+    "/images/sneak-peak-1.png",
+    "/images/sneak-peak-2.png",
+    "/images/sneak-peak-3.png",
+    "/images/sneak-peak-4.png"
+  ],
+  keyPoints: [
+    "Foundational Concepts",
+    "Design Principles Mastery",
+    "Advanced Techniques in Digital Creation",
+    "Project Showcase and Critique",
+    "Optimizing for Various Platforms",
+    "Digital Asset Management Best Practices",
+    "Monetization Strategies",
+    "Capstone Project: Building Your Portfolio"
+  ],
+  includes: [
+    "Learning Resources",
+    "Quality Lesson Videos",
+    "Certificate of Completion",
+    "Private Consultation"
+  ],
+  curriculum: [
+    {
+      id: "mod-1",
+      number: "Module 1",
+      title: "Module 1: Introduction to Digital Assets",
+      duration: "12 mins",
+      description:
+        "Lay the groundwork with lessons like 'Understanding Digital Elements' and 'Navigating Design Software Tools.' Dive into the essentials of digital asset creation."
+    },
+    {
+      id: "mod-2",
+      number: "Module 2",
+      title: "Module 2: Design Principles for Impact",
+      duration: "21 mins",
+      description:
+        "Master the principles that drive impactful designs with lessons such as 'Color Theory in Digital Design' and 'Typography Essentials.' Elevate your visual communication skills."
+    },
+    {
+      id: "mod-4",
+      number: "Module 4",
+      title: "Module 4: User-Centric Design Strategies",
+      duration: "18 mins",
+      description:
+        "Understand 'Design Thinking in Digital Creation' and delve into 'User Experience (UX) Essentials.' Craft digital assets with a focus on user-centric design."
+    },
+    {
+      id: "mod-5",
+      number: "Module 5",
+      title: "Module 5: Interactive Media and Engagement",
+      duration: "25 mins",
+      description:
+        "Engage your audience with lessons like 'Creating Interactive Presentations' and 'Integrating Multimedia Elements.' Master the art of creating immersive digital experiences."
+    },
+    {
+      id: "mod-6",
+      number: "Module 6",
+      title: "Module 6: Project Showcase and Critique",
+      duration: "15 mins",
+      description:
+        "Perfect your presentation skills with 'Effective Presentation Techniques' and embrace collaboration with 'Peer Critique and Collaboration.' Showcase your work with confidence."
+    },
+    {
+      id: "mod-7",
+      number: "Module 7",
+      title: "Module 7: Optimizing Digital Assets for Various Platforms",
+      duration: "20 mins",
+      description:
+        "Adapt your digital creations for 'Mobile Platforms' and optimize for 'Social Media.' Ensure widespread accessibility and engagement across diverse digital landscapes."
+    }
+  ],
+  reviews: [
+    {
+      id: "rev-1",
+      author: "PurePearl Studio",
+      role: "UI/UX Designer",
+      rating: 5,
+      date: "a year ago",
+      avatar: "/images/author-purepearl.png",
+      comment:
+        "“The course provided me with a comprehensive understanding of digital asset creation. The lessons were in-depth, practical, and immediately applicable to my work. Highly recommended!”"
+    },
+    {
+      id: "rev-2",
+      author: "Albert Flores",
+      role: "UI/UX Designer",
+      rating: 5,
+      date: "a year ago",
+      avatar: "/images/course-avatar-1.png",
+      comment:
+        "This course transformed my approach to digital design. The combination of theory, hands-on exercises, and real-world applications made it a truly enriching experience. Excited to implement what I’ve learned!"
+    },
+    {
+      id: "rev-3",
+      author: "Cody Fisher",
+      role: "UI/UX Designer",
+      rating: 5,
+      date: "a year ago",
+      avatar: "/images/course-avatar-2.png",
+      comment:
+        "The project showcase and critique module created a collaborative environment where I could showcase my work, receive valuable feedback, and refine my skills. It added a unique and valuable dimension to the learning process."
+    },
+    {
+      id: "rev-4",
+      author: "Brooklyn Simmons",
+      role: "UI/UX Designer",
+      rating: 5,
+      date: "a year ago",
+      avatar: "/images/course-avatar-3.png",
+      comment:
+        "The lessons on optimizing digital assets for various platforms were particularly insightful. The course adapts to the evolving digital landscape, and the engaging content kept me motivated throughout."
+    }
+  ]
+};
+
+export function getCourseDetail(courseId: string): CourseDetail | null {
+  const course = ALL_COURSES_DATA.find((c) => c.id === courseId);
+  if (!course) return null;
+
+  return {
+    ...DEFAULT_COURSE_DETAIL,
+    id: course.id,
+    title:
+      course.id === "course-2"
+        ? "Build Digital Asset: A Comprehensive Guide"
+        : `${course.title}: A Comprehensive Guide`,
+    subtitle: `Unlock the Power of ${course.category || "Creation"} with Expert Guidance`,
+    author: course.author,
+    price: course.price,
+    period: course.period,
+    level: course.level,
+    totalLessonsText: "112 Lessons",
+    totalHoursText: "24 hours",
+    videoPreviewImage: "/images/course-detail-video-cover.png",
+    studentsCount: `${course.studentsCount} Students`
+  };
+}
