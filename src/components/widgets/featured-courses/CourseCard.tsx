@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import type { CourseCard as CourseCardType } from "@/types";
 
@@ -9,8 +10,9 @@ interface CourseCardProps {
 
 export function CourseCard({ course, className = "" }: CourseCardProps) {
   return (
-    <div
-      className={`flex flex-col overflow-hidden rounded-[24px] border border-[#ced0d3] bg-white p-4 transition-all hover:shadow-xl ${className}`}
+    <Link
+      href={`/courses/${course.id}`}
+      className={`group flex flex-col overflow-hidden rounded-[24px] border border-[#ced0d3] bg-white p-4 transition-all hover:-translate-y-1 hover:shadow-xl ${className}`}
     >
       {/* Card Image Banner with Pill Badges */}
       <div className="relative h-[195px] w-full overflow-hidden rounded-[12px] bg-[#222]">
@@ -101,6 +103,6 @@ export function CourseCard({ course, className = "" }: CourseCardProps) {
           <span className="font-sans text-[12px] text-[#4f4f4f]">{course.period}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
