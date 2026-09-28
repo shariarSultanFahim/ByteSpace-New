@@ -1,4 +1,3 @@
-import { Footer, Header } from "@/layouts";
 import {
   Categories,
   CreatorGrowth,
@@ -11,12 +10,9 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-white">
-      {/* Blue Header & Hero Area */}
-      <div className="relative w-full bg-[#003be2]">
-        <Header />
-        <Hero />
-      </div>
+    <>
+      {/* Hero Section */}
+      <Hero />
 
       {/* Partner Logos */}
       <LogoPartners />
@@ -35,9 +31,6 @@ export default function Home() {
 
       {/* Community Testimonials */}
       <Testimonials />
-
-      {/* Global Footer */}
-      <Footer />
-    </div>
+    </>
   );
 }

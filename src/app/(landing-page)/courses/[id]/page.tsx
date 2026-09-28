@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 
 import { getCourseDetail } from "@/data";
 
-import { Footer, Header } from "@/components/layouts";
-
 import { CourseHero, CourseVideoPreview } from "./components/course-hero";
 import { CourseSidebarCard } from "./components/course-sidebar-card";
 import { CourseTabsContent } from "./components/course-tabs-content";
@@ -40,7 +38,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
       {/* 
         Hero Banner:
         Blue background ends right behind the video.
@@ -57,9 +55,6 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
             priority
           />
         </div>
-
-        {/* Global Navigation Header */}
-        <Header />
 
         {/* Hero Section Container */}
         <div className="relative z-20 mx-auto max-w-[1440px] px-6 pt-4 pb-12 lg:px-[120px]">
@@ -87,7 +82,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
       </div>
 
       {/* Main Content Area: Left Column sits below the video on the white background */}
-      <main className="relative z-10 mx-auto max-w-[1440px] px-6 pt-12 pb-24 lg:px-[120px]">
+      <section className="relative z-10 mx-auto max-w-[1440px] px-6 pt-12 pb-24 lg:px-[120px]">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           {/* Left Column: Tabs (About, Lesson, Reviews), Description, Sneak Peak, Key Points */}
           <div className="w-full lg:max-w-[720px]">
@@ -100,10 +95,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
             aria-hidden="true"
           />
         </div>
-      </main>
-
-      {/* Global Footer */}
-      <Footer />
-    </div>
+      </section>
+    </>
   );
 }
