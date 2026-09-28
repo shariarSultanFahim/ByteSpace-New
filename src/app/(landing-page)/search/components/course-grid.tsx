@@ -11,18 +11,18 @@ interface CourseGridProps {
 export function CourseGrid({ courses, onClearFilters }: CourseGridProps) {
   if (courses.length === 0) {
     return (
-      <div className="mt-16 flex flex-col items-center justify-center rounded-[32px] border border-dashed border-[#ced0d3] py-20 text-center">
+      <div className="mt-16 flex flex-col items-center justify-center rounded-[32px] border border-dashed border-border-soft py-20 text-center">
         <h3 className="font-['Poppins'] text-[24px] font-semibold text-[#040819]">
           No courses found
         </h3>
-        <p className="mt-2 max-w-[420px] font-sans text-[15px] text-[#82868e]">
+        <p className="mt-2 max-w-[420px] font-sans text-[15px] text-text-muted">
           We couldn&apos;t find any courses matching your search criteria. Try adjusting your
           keywords or clearing filters.
         </p>
         <button
           type="button"
           onClick={onClearFilters}
-          className="mt-6 rounded-full bg-[#d4fb20] px-6 py-2.5 font-sans text-[15px] font-semibold text-[#242528] shadow-sm transition-transform hover:scale-105 active:scale-95"
+          className="mt-6 rounded-full bg-brand-lime px-6 py-2.5 font-sans text-[15px] font-semibold text-text-ink shadow-sm transition-transform hover:scale-105 active:scale-95"
         >
           Clear All Filters
         </button>

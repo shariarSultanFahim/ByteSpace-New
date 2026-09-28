@@ -4,7 +4,7 @@ import { PARTNERS_DATA } from "@/data";
 
 export function LogoPartners() {
   return (
-    <section className="w-full bg-[#f5f5f6] py-12 lg:py-16" data-node-id="1:1794">
+    <section className="w-full bg-surface-subtle py-12 lg:py-16" data-node-id="1:1794">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14 lg:justify-between lg:gap-[72px]">
           {PARTNERS_DATA.map((partner) => (

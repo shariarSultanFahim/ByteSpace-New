@@ -36,15 +36,15 @@ export function CourseHero({ course }: CourseHeroProps) {
       <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
         {/* Course Info */}
         <div className="max-w-[760px]">
-          <h1 className="font-['Poppins'] text-[28px] leading-[1.2] font-semibold tracking-[-0.36px] text-[#f5f5f6] sm:text-[34px] lg:text-[36px]">
+          <h1 className="font-['Poppins'] text-[28px] leading-[1.2] font-semibold tracking-[-0.36px] text-surface-subtle sm:text-[34px] lg:text-[36px]">
             {course.title}
           </h1>
-          <p className="mt-2 font-['Poppins'] text-[18px] leading-[1.3] font-semibold tracking-[-0.2px] text-[#f5f5f6] sm:text-[20px]">
+          <p className="mt-2 font-['Poppins'] text-[18px] leading-[1.3] font-semibold tracking-[-0.2px] text-surface-subtle sm:text-[20px]">
             {course.subtitle}
           </p>
 
           <p className="mt-4 font-sans text-[18px] text-[#f1f4fe]">
-            by <span className="text-[#d4fb20]">{course.author}</span>
+            by <span className="text-brand-lime">{course.author}</span>
           </p>
 
           {/* Badges: Level, Rating, Students */}
@@ -58,7 +58,7 @@ export function CourseHero({ course }: CourseHeroProps) {
                 height={18}
                 className="size-4.5"
               />
-              <span className="font-sans text-[16px] font-medium text-[#242528]">
+              <span className="font-sans text-[16px] font-medium text-text-ink">
                 {course.level}
               </span>
             </div>
@@ -72,7 +72,7 @@ export function CourseHero({ course }: CourseHeroProps) {
                 height={18}
                 className="size-4.5"
               />
-              <span className="font-sans text-[16px] font-medium text-[#242528]">
+              <span className="font-sans text-[16px] font-medium text-text-ink">
                 {course.rating} ({course.reviewsCount} reviews)
               </span>
             </div>
@@ -88,14 +88,14 @@ export function CourseHero({ course }: CourseHeroProps) {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[#242528]"
+                className="text-text-ink"
               >
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
                 <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
-              <span className="font-sans text-[16px] font-medium text-[#242528]">
+              <span className="font-sans text-[16px] font-medium text-text-ink">
                 {course.studentsCount}
               </span>
             </div>
@@ -106,7 +106,7 @@ export function CourseHero({ course }: CourseHeroProps) {
         <button
           type="button"
           onClick={handleShare}
-          className="flex h-[42px] shrink-0 items-center gap-2 self-start rounded-full bg-[#d4fb20] px-6 font-sans text-[16px] font-medium text-[#242528] shadow-md transition-transform hover:scale-105 active:scale-95"
+          className="flex h-[42px] shrink-0 items-center gap-2 self-start rounded-full bg-brand-lime px-6 font-sans text-[16px] font-medium text-text-ink shadow-md transition-transform hover:scale-105 active:scale-95"
         >
           <svg
             width="18"

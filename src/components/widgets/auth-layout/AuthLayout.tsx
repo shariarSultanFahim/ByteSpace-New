@@ -10,7 +10,7 @@ interface AuthLayoutProps {
 
 export function AuthLayout({ headingSubtitle, description, children }: AuthLayoutProps) {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[#003be2]">
+    <div className="relative min-h-screen w-full overflow-hidden bg-brand-primary">
       {/* 120px Grid overlay matching Figma Group 4 */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-40">
         <Image
@@ -35,7 +35,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               className="h-[31.5px] w-[28.875px]"
               priority
             />
-            <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-[#f5f5f6]">
+            <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-surface-subtle">
               ByteSpace
             </span>
           </Link>
@@ -49,10 +49,10 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
           <div className="hidden flex-col items-start lg:col-span-6 lg:flex">
             {/* Heading Text Block */}
             <div className="max-w-[475px]">
-              <h1 className="font-['Poppins'] text-[20px] leading-[1.2] font-semibold tracking-[-0.2px] text-[#f5f5f6]">
+              <h1 className="font-['Poppins'] text-[20px] leading-[1.2] font-semibold tracking-[-0.2px] text-surface-subtle">
                 {headingSubtitle}
               </h1>
-              <p className="mt-4 font-sans text-[18px] leading-[1.6] text-[#f5f5f6]">
+              <p className="mt-4 font-sans text-[18px] leading-[1.6] text-surface-subtle">
                 {description}
               </p>
             </div>
@@ -71,7 +71,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               </div>
 
               {/* Course Card 1: Build Digital Asset (Behind) */}
-              <div className="absolute top-[84px] left-0 z-10 h-[384px] w-[373px] overflow-hidden rounded-[24px] border border-[#ced0d3] bg-white p-[15px] shadow-2xl transition-transform hover:-translate-y-1">
+              <div className="absolute top-[84px] left-0 z-10 h-[384px] w-[373px] overflow-hidden rounded-[24px] border border-border-soft bg-white p-[15px] shadow-2xl transition-transform hover:-translate-y-1">
                 {/* Banner Image */}
                 <div className="relative h-[195px] w-full overflow-hidden rounded-[12px] bg-[#443131]">
                   <Image
@@ -81,13 +81,13 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
                     className="object-cover"
                   />
                   <div className="absolute bottom-[10px] left-[12px] flex items-center gap-[8px]">
-                    <span className="rounded-full bg-[#f6f6f6]/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
+                    <span className="rounded-full bg-surface-subtle/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
                       17 Lessons
                     </span>
-                    <span className="rounded-full bg-[#f6f6f6]/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
+                    <span className="rounded-full bg-surface-subtle/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
                       2 hours 16 mins
                     </span>
-                    <span className="rounded-full bg-[#f6f6f6]/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
+                    <span className="rounded-full bg-surface-subtle/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
                       59 Comments
                     </span>
                   </div>
@@ -100,12 +100,12 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
                       Build Digital Asset
                     </h3>
                     <p className="font-sans text-[12px] text-[#4f4f4f]">
-                      by <span className="text-[#003be2]">purepearl studio</span>
+                      by <span className="text-brand-primary">purepearl studio</span>
                     </p>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-[4px] rounded-[24px] bg-[#f5f5f6] px-[12px] py-[6px] text-[12px] font-medium text-[#4b4c53]">
+                    <div className="flex items-center gap-[4px] rounded-[24px] bg-surface-subtle px-[12px] py-[6px] text-[12px] font-medium text-text-subtle">
                       <Image
                         src="/images/signal-cellular.svg"
                         alt=""
@@ -145,7 +145,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
                         height={32}
                         className="-ml-[8px] size-[32px] rounded-full border-2 border-white object-cover"
                       />
-                      <div className="-ml-[8px] flex size-[32px] items-center justify-center rounded-full border-2 border-white bg-[#d4fb20] font-sans text-[11px] font-bold text-[#242528]">
+                      <div className="-ml-[8px] flex size-[32px] items-center justify-center rounded-full border-2 border-white bg-brand-lime font-sans text-[11px] font-bold text-text-ink">
                         26+
                       </div>
                     </div>
@@ -153,7 +153,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
 
                   <div className="flex items-baseline justify-between">
                     <div className="flex items-baseline gap-1">
-                      <span className="font-['Poppins'] text-[20px] font-semibold text-[#003be2]">
+                      <span className="font-['Poppins'] text-[20px] font-semibold text-brand-primary">
                         $25
                       </span>
                       <span className="font-sans text-[12px] text-[#4f4f4f]">/lifetime</span>
@@ -174,7 +174,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               </div>
 
               {/* Course Card 2: the Power of Big Data (Front, offset) */}
-              <div className="absolute top-[0px] left-[110px] z-20 h-[384px] w-[373px] overflow-hidden rounded-[24px] border border-[#ced0d3] bg-white p-[15px] shadow-2xl transition-transform hover:-translate-y-1">
+              <div className="absolute top-[0px] left-[110px] z-20 h-[384px] w-[373px] overflow-hidden rounded-[24px] border border-border-soft bg-white p-[15px] shadow-2xl transition-transform hover:-translate-y-1">
                 {/* Banner Image */}
                 <div className="relative h-[195px] w-full overflow-hidden rounded-[12px] bg-[#443131]">
                   <Image
@@ -184,13 +184,13 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
                     className="object-cover"
                   />
                   <div className="absolute bottom-[10px] left-[12px] flex items-center gap-[8px]">
-                    <span className="rounded-full bg-[#f6f6f6]/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
+                    <span className="rounded-full bg-surface-subtle/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
                       17 Lessons
                     </span>
-                    <span className="rounded-full bg-[#f6f6f6]/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
+                    <span className="rounded-full bg-surface-subtle/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
                       2 hours 16 mins
                     </span>
-                    <span className="rounded-full bg-[#f6f6f6]/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
+                    <span className="rounded-full bg-surface-subtle/80 px-[12px] py-[4px] font-sans text-[12px] font-medium text-[#4f4f4f] backdrop-blur-[4px]">
                       59 Comments
                     </span>
                   </div>
@@ -203,12 +203,12 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
                       the Power of Big Data
                     </h3>
                     <p className="font-sans text-[12px] text-[#4f4f4f]">
-                      by <span className="text-[#003be2]">purepearl studio</span>
+                      by <span className="text-brand-primary">purepearl studio</span>
                     </p>
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-[4px] rounded-[24px] bg-[#f5f5f6] px-[12px] py-[6px] text-[12px] font-medium text-[#4b4c53]">
+                    <div className="flex items-center gap-[4px] rounded-[24px] bg-surface-subtle px-[12px] py-[6px] text-[12px] font-medium text-text-subtle">
                       <Image
                         src="/images/signal-cellular.svg"
                         alt=""
@@ -248,7 +248,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
                         height={32}
                         className="-ml-[8px] size-[32px] rounded-full border-2 border-white object-cover"
                       />
-                      <div className="-ml-[8px] flex size-[32px] items-center justify-center rounded-full border-2 border-white bg-[#d4fb20] font-sans text-[11px] font-bold text-[#242528]">
+                      <div className="-ml-[8px] flex size-[32px] items-center justify-center rounded-full border-2 border-white bg-brand-lime font-sans text-[11px] font-bold text-text-ink">
                         26+
                       </div>
                     </div>
@@ -256,7 +256,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
 
                   <div className="flex items-baseline justify-between">
                     <div className="flex items-baseline gap-1">
-                      <span className="font-['Poppins'] text-[20px] font-semibold text-[#003be2]">
+                      <span className="font-['Poppins'] text-[20px] font-semibold text-brand-primary">
                         $25
                       </span>
                       <span className="font-sans text-[12px] text-[#4f4f4f]">/lifetime</span>
@@ -299,10 +299,10 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               </div>
 
               {/* Happy Students Badge (Lime Pill) */}
-              <div className="absolute right-[80px] bottom-[110px] z-40 rounded-[16px] bg-[#d4fb20] p-[16px] shadow-2xl backdrop-blur-[10px]">
-                <p className="font-sans text-[16px] font-medium text-[#242528]">Happy Students</p>
-                <div className="mt-[2px] flex items-center gap-1 font-sans text-[10px] text-[#424348]">
-                  <span className="font-bold text-[#242528]">4.5</span>
+              <div className="absolute right-[80px] bottom-[110px] z-40 rounded-[16px] bg-brand-lime p-[16px] shadow-2xl backdrop-blur-[10px]">
+                <p className="font-sans text-[16px] font-medium text-text-ink">Happy Students</p>
+                <div className="mt-[2px] flex items-center gap-1 font-sans text-[10px] text-text-subtle">
+                  <span className="font-bold text-text-ink">4.5</span>
                   <span>(240)</span>
                   <Image src="/images/blue-star.svg" alt="" width={16} height={16} />
                 </div>
@@ -357,7 +357,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
                     height={43}
                     className="-ml-[16px] size-[43px] rounded-full border-2 border-white object-cover"
                   />
-                  <div className="-ml-[16px] flex size-[43px] items-center justify-center rounded-full border-2 border-white bg-[#003be2] font-sans text-[12px] font-bold text-white">
+                  <div className="-ml-[16px] flex size-[43px] items-center justify-center rounded-full border-2 border-white bg-brand-primary font-sans text-[12px] font-bold text-white">
                     2K+
                   </div>
                 </div>

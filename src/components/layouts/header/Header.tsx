@@ -35,33 +35,33 @@ export function Header() {
             className="h-[31.5px] w-[28.875px]"
             priority
           />
-          <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-[#f5f5f6]">
+          <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-surface-subtle">
             ByteSpace
           </span>
         </Link>
 
         {/* Center Nav */}
         <nav
-          className="hidden items-center gap-6 text-[16px] text-[#f5f5f6] md:flex"
+          className="hidden items-center gap-6 text-[16px] text-surface-subtle md:flex"
           data-node-id="1:1779"
         >
           <Link
             href="/"
-            className="font-medium text-[#f5f5f6] transition-opacity hover:opacity-80"
+            className="font-medium text-surface-subtle transition-opacity hover:opacity-80"
             data-node-id="1:1780"
           >
             Home
           </Link>
           <Link
             href="/search"
-            className="font-normal text-[#f5f5f6] transition-opacity hover:opacity-80"
+            className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
             data-node-id="1:1781"
           >
             Courses
           </Link>
           <Link
             href="/creators/purepearl-studio"
-            className="font-normal text-[#f5f5f6] transition-opacity hover:opacity-80"
+            className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
             data-node-id="1:1782"
           >
             Creators
@@ -69,16 +69,19 @@ export function Header() {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-6 text-[16px] text-[#f5f5f6]" data-node-id="1:1783">
+        <div
+          className="flex items-center gap-6 text-[16px] text-surface-subtle"
+          data-node-id="1:1783"
+        >
           {!isLoading && user ? (
             <div className="flex items-center gap-4">
               <span className="text-[14px] font-medium text-white/90">
-                Hi, <span className="font-semibold text-[#d4fb20]">{displayName}</span>
+                Hi, <span className="font-semibold text-brand-lime">{displayName}</span>
               </span>
               <button
                 type="button"
                 onClick={handleLogout}
-                className="rounded-full bg-white/10 px-4 py-1.5 text-[14px] font-medium text-[#f5f5f6] transition-colors hover:bg-white/20"
+                className="rounded-full bg-white/10 px-4 py-1.5 text-[14px] font-medium text-surface-subtle transition-colors hover:bg-white/20"
               >
                 Logout
               </button>
@@ -87,14 +90,14 @@ export function Header() {
             <>
               <Link
                 href="/login"
-                className="font-normal text-[#f5f5f6] transition-opacity hover:opacity-80"
+                className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
                 data-node-id="1:1784"
               >
                 Sign In
               </Link>
               <Link
                 href="/register"
-                className="font-normal text-[#f5f5f6] transition-opacity hover:opacity-80"
+                className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
                 data-node-id="1:1785"
               >
                 Join Us

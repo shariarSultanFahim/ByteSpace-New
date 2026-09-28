@@ -17,7 +17,7 @@ export function Hero() {
     }
   };
   return (
-    <section className="relative w-full overflow-hidden bg-[#003be2]" data-node-id="1:1695">
+    <section className="relative w-full overflow-hidden bg-brand-primary" data-node-id="1:1695">
       {/* Background Grid */}
       <div className="pointer-events-none absolute inset-0 z-0 flex justify-center opacity-40">
         <Image
@@ -32,7 +32,7 @@ export function Hero() {
 
       {/* Center Yellowish Lime Arc (Ellipse 7) */}
       <div className="pointer-events-none absolute top-[400px] left-1/2 z-0 mt-30 -translate-x-1/2 sm:top-[380px] lg:top-[360px]">
-        <div className="h-[960px] w-[960px] rounded-full bg-[#cbfa04] sm:h-[1100px] sm:w-[1100px] lg:h-[1250px] lg:w-[1250px]" />
+        <div className="h-[960px] w-[960px] rounded-full bg-brand-lime sm:h-[1100px] sm:w-[1100px] lg:h-[1250px] lg:w-[1250px]" />
       </div>
 
       {/* Floating 3D Ornaments */}
@@ -109,7 +109,7 @@ export function Hero() {
           <h1 className="font-['Poppins'] text-[40px] leading-[1.15] font-semibold tracking-[-0.72px] text-white sm:text-[56px] lg:text-[72px]">
             Get Access to Hundreds Courses Available
           </h1>
-          <p className="max-w-[820px] font-sans text-[16px] leading-[1.6] text-[#e5e6e8] sm:text-[18px]">
+          <p className="max-w-[820px] font-sans text-[16px] leading-[1.6] text-border-light sm:text-[18px]">
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide
             range of courses.
           </p>
@@ -133,12 +133,12 @@ export function Hero() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Course, topic, creator"
-              className="w-full bg-transparent font-sans text-[16px] text-[#242528] placeholder:text-[#82868e] focus:outline-none sm:text-[18px]"
+              className="w-full bg-transparent font-sans text-[16px] text-text-ink placeholder:text-text-muted focus:outline-none sm:text-[18px]"
             />
           </div>
           <button
             type="submit"
-            className="flex h-[46px] w-full items-center justify-center rounded-full bg-[#d4fb20] px-6 font-sans text-[18px] font-medium text-[#242528] shadow-md transition-transform hover:scale-105 active:scale-95 sm:w-auto"
+            className="flex h-[46px] w-full items-center justify-center rounded-full bg-brand-lime px-6 font-sans text-[18px] font-medium text-text-ink shadow-md transition-transform hover:scale-105 active:scale-95 sm:w-auto"
           >
             Search
           </button>
@@ -159,8 +159,8 @@ export function Hero() {
 
           {/* Floating Card: UI/UX Design (Left) */}
           <div className="absolute top-[18%] left-0 z-30 hidden rounded-2xl bg-white p-4 text-left shadow-[0_12px_32px_rgba(0,0,0,0.12)] sm:block lg:left-[40px]">
-            <p className="font-sans text-[16px] font-medium text-[#242528]">UI/UX Design</p>
-            <div className="mt-1 flex items-center gap-2 font-sans text-[12px] text-[#82868e]">
+            <p className="font-sans text-[16px] font-medium text-text-ink">UI/UX Design</p>
+            <div className="mt-1 flex items-center gap-2 font-sans text-[12px] text-text-muted">
               <span>200 Courses</span>
               <span>•</span>
               <span>1000+ Students</span>
@@ -169,9 +169,9 @@ export function Hero() {
 
           {/* Floating Card: Happy Students (Bottom Left - overlapping edge) */}
           <div className="absolute -bottom-2 -left-6 z-30 rounded-2xl bg-white p-4 text-left shadow-[0_12px_32px_rgba(0,0,0,0.12)] sm:bottom-6 sm:-left-4 lg:-left-6">
-            <p className="font-sans text-[16px] font-medium text-[#242528]">Happy Students</p>
-            <div className="mt-0.5 flex items-center gap-1.5 font-sans text-[12px] text-[#82868e]">
-              <span className="font-medium text-[#242528]">4.5</span>
+            <p className="font-sans text-[16px] font-medium text-text-ink">Happy Students</p>
+            <div className="mt-0.5 flex items-center gap-1.5 font-sans text-[12px] text-text-muted">
+              <span className="font-medium text-text-ink">4.5</span>
               <span>(240)</span>
               <Image
                 src="/images/star-rate.svg"
@@ -232,7 +232,7 @@ export function Hero() {
                 height={36}
                 className="-ml-2.5 size-9 rounded-full border-2 border-white object-cover"
               />
-              <div className="-ml-2.5 flex size-9 items-center justify-center rounded-full border-2 border-white bg-[#d4fb20] font-sans text-[12px] font-bold text-[#242528]">
+              <div className="-ml-2.5 flex size-9 items-center justify-center rounded-full border-2 border-white bg-brand-lime font-sans text-[12px] font-bold text-text-ink">
                 2K+
               </div>
             </div>
@@ -240,12 +240,12 @@ export function Hero() {
 
           {/* Floating Card: Learning Progress (Right) */}
           <div className="absolute top-[20%] right-2 z-30 rounded-2xl bg-white p-5 text-left shadow-[0_12px_32px_rgba(0,0,0,0.12)] sm:right-6 lg:right-[30px]">
-            <p className="font-sans text-[14px] font-medium text-[#242528]">Learning Progress</p>
-            <p className="mt-1 font-sans text-[44px] leading-none font-bold tracking-tight text-[#242528] lg:text-[50px]">
+            <p className="font-sans text-[14px] font-medium text-text-ink">Learning Progress</p>
+            <p className="mt-1 font-sans text-[44px] leading-none font-bold tracking-tight text-text-ink lg:text-[50px]">
               55%
             </p>
-            <div className="mt-4 h-2 w-[180px] rounded-full bg-[#f0f0f2] lg:w-[210px]">
-              <div className="h-full w-[55%] rounded-full bg-[#cbfa04]" />
+            <div className="mt-4 h-2 w-[180px] rounded-full bg-surface-subtle lg:w-[210px]">
+              <div className="h-full w-[55%] rounded-full bg-brand-lime" />
             </div>
           </div>
         </div>

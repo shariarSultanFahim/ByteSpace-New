@@ -4,7 +4,7 @@ export function CtaSection() {
   return (
     <section
       id="join"
-      className="relative w-full overflow-hidden bg-[#003be2] py-24 text-center lg:py-28"
+      className="relative w-full overflow-hidden bg-brand-primary py-24 text-center lg:py-28"
       data-node-id="34:1161"
     >
       {/* Background Grid */}
@@ -65,10 +65,10 @@ export function CtaSection() {
 
       {/* Content */}
       <div className="relative z-20 mx-auto max-w-[964px] px-6">
-        <h2 className="font-['Poppins'] text-[32px] leading-[1.2] font-semibold tracking-[-0.44px] text-[#f5f5f6] sm:text-[40px] lg:text-[44px]">
+        <h2 className="font-['Poppins'] text-[32px] leading-[1.2] font-semibold tracking-[-0.44px] text-surface-subtle sm:text-[40px] lg:text-[44px]">
           Unlock Your Potential as a Creator with ByteSpace
         </h2>
-        <p className="mx-auto mt-6 max-w-[880px] font-sans text-[16px] leading-[1.6] text-[#f5f5f6] sm:text-[18px]">
+        <p className="mx-auto mt-6 max-w-[880px] font-sans text-[16px] leading-[1.6] text-surface-subtle sm:text-[18px]">
           Experience the collaboration of numerous creators and an expanding selection of courses.
           Register now and become a part of a community comprising over 10,000 local and
           international creators. Utilize our Course Editor, and showcase your expertise by
@@ -77,7 +77,7 @@ export function CtaSection() {
         <div className="mt-10 flex justify-center">
           <button
             type="button"
-            className="flex h-[46px] items-center justify-center rounded-full bg-[#d4fb20] px-8 font-sans text-[18px] font-medium text-[#242528] shadow-lg transition-transform hover:scale-105 active:scale-95"
+            className="flex h-[46px] items-center justify-center rounded-full bg-brand-lime px-8 font-sans text-[18px] font-medium text-text-ink shadow-lg transition-transform hover:scale-105 active:scale-95"
           >
             Join as Creator
           </button>
