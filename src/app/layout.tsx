@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} flex min-h-screen w-full flex-col font-sans antialiased`}
       >
         <Providers>
-          <main className="flex-1">{children}</main>
+          {children}
           <Toaster richColors />
         </Providers>
 

@@ -3,8 +3,6 @@
 import { Suspense } from "react";
 import Image from "next/image";
 
-import { Footer, Header } from "@/components/layouts";
-
 import { CourseGrid } from "./components/course-grid";
 import { Pagination } from "./components/pagination";
 import { SearchFilters } from "./components/search-filters";
@@ -30,7 +28,7 @@ function SearchContent() {
   } = useCourseSearch(6);
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
       {/* Top Blue Hero/Header Section */}
       <div className="relative w-full overflow-hidden bg-[#003be2]">
         {/* Background Grid Pattern */}
@@ -45,9 +43,6 @@ function SearchContent() {
           />
         </div>
 
-        {/* Global Header */}
-        <Header />
-
         {/* Search Header Banner */}
         <SearchHeader
           searchInput={searchInput}
@@ -57,7 +52,7 @@ function SearchContent() {
       </div>
 
       {/* Main Course Listing & Filters Section */}
-      <main className="mx-auto max-w-[1440px] px-6 py-10 lg:px-[120px]">
+      <section className="mx-auto max-w-[1440px] px-6 py-10 lg:px-[120px]">
         {/* Filter Controls Bar & Category Pills */}
         <SearchFilters
           selectedLevel={selectedLevel}
@@ -78,11 +73,8 @@ function SearchContent() {
           totalPages={totalPages}
           onPageChange={handlePageChange}
         />
-      </main>
-
-      {/* Global Footer */}
-      <Footer />
-    </div>
+      </section>
+    </>
   );
 }
 
