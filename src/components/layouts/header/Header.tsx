@@ -1,14 +1,64 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { toast } from "sonner";
 
 import { useAuth } from "@/hooks";
 
+gsap.registerPlugin(useGSAP);
+
 export function Header() {
-  const { user, signOut, isLoading } = useAuth();
+  const pathname = usePathname();
+  const { user, signOut } = useAuth();
+  const headerRef = useRef<HTMLElement>(null);
+  const logoRef = useRef<HTMLAnchorElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const actionsRef = useRef<HTMLDivElement>(null);
+
+  const isHomeActive = pathname === "/";
+  const isCoursesActive = pathname === "/search" || pathname.startsWith("/courses");
+  const isCreatorsActive = pathname.startsWith("/creators");
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      // Step 1: Logo drop-in
+      tl.from(logoRef.current, {
+        y: -30,
+        opacity: 0,
+        duration: 0.7,
+        ease: "back.out(1.5)"
+      })
+        // Step 2: Nav Links drop-in
+        .from(
+          navRef.current,
+          {
+            y: -20,
+            opacity: 0,
+            duration: 0.6
+          },
+          "-=0.4"
+        )
+        // Step 3: Auth & Cart Actions drop-in
+        .from(
+          actionsRef.current,
+          {
+            y: -20,
+            opacity: 0,
+            duration: 0.6
+          },
+          "-=0.3"
+        );
+    },
+    { scope: headerRef }
+  );
 
   const handleLogout = async () => {
     try {
@@ -23,10 +73,10 @@ export function Header() {
     (user?.user_metadata?.full_name as string | undefined) || user?.email?.split("@")[0] || "User";
 
   return (
-    <header className="relative z-30 w-full" data-node-id="1:1778">
+    <header ref={headerRef} className="relative z-30 w-full" data-node-id="1:1778">
       <div className="mx-auto flex h-[120px] max-w-[1440px] items-center justify-between px-6 lg:px-[120px]">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-[10px]" data-node-id="1:1787">
+        {/* Step 1: Logo */}
+        <Link ref={logoRef} href="/" className="flex items-center gap-[10px]" data-node-id="1:1787">
           <Image
             src="/images/logo.svg"
             alt="ByteSpace Logo"
@@ -35,45 +85,59 @@ export function Header() {
             className="h-[31.5px] w-[28.875px]"
             priority
           />
-          <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-surface-subtle">
+          <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-white">
             ByteSpace
           </span>
         </Link>
 
-        {/* Center Nav */}
+        {/* Step 2: Center Nav */}
         <nav
-          className="hidden items-center gap-6 text-[16px] text-surface-subtle md:flex"
+          ref={navRef}
+          className="hidden items-center gap-8 text-[16px] md:flex"
           data-node-id="1:1779"
         >
           <Link
             href="/"
-            className="font-medium text-surface-subtle transition-opacity hover:opacity-80"
+            className={`transition-colors hover:text-brand-lime ${
+              isHomeActive
+                ? "font-semibold text-brand-lime underline decoration-brand-lime decoration-2 underline-offset-8"
+                : "font-normal text-white/80"
+            }`}
             data-node-id="1:1780"
           >
             Home
           </Link>
           <Link
             href="/search"
-            className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
+            className={`transition-colors hover:text-brand-lime ${
+              isCoursesActive
+                ? "font-semibold text-brand-lime underline decoration-brand-lime decoration-2 underline-offset-8"
+                : "font-normal text-white/80"
+            }`}
             data-node-id="1:1781"
           >
             Courses
           </Link>
           <Link
             href="/creators/purepearl-studio"
-            className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
+            className={`transition-colors hover:text-brand-lime ${
+              isCreatorsActive
+                ? "font-semibold text-brand-lime underline decoration-brand-lime decoration-2 underline-offset-8"
+                : "font-normal text-white/80"
+            }`}
             data-node-id="1:1782"
           >
             Creators
           </Link>
         </nav>
 
-        {/* Right Actions */}
+        {/* Step 3: Right Actions */}
         <div
-          className="flex items-center gap-6 text-[16px] text-surface-subtle"
+          ref={actionsRef}
+          className="flex items-center gap-6 text-[16px] text-white"
           data-node-id="1:1783"
         >
-          {!isLoading && user ? (
+          {user ? (
             <div className="flex items-center gap-4">
               <span className="text-[14px] font-medium text-white/90">
                 Hi, <span className="font-semibold text-brand-lime">{displayName}</span>
@@ -81,7 +145,7 @@ export function Header() {
               <button
                 type="button"
                 onClick={handleLogout}
-                className="rounded-full bg-white/10 px-4 py-1.5 text-[14px] font-medium text-surface-subtle transition-colors hover:bg-white/20"
+                className="rounded-full bg-white/10 px-4 py-1.5 text-[14px] font-medium text-white transition-colors hover:bg-white/20"
               >
                 Logout
               </button>
@@ -90,14 +154,14 @@ export function Header() {
             <>
               <Link
                 href="/login"
-                className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
+                className="font-normal text-white transition-opacity hover:opacity-80"
                 data-node-id="1:1784"
               >
                 Sign In
               </Link>
               <Link
                 href="/register"
-                className="font-normal text-surface-subtle transition-opacity hover:opacity-80"
+                className="font-normal text-white transition-opacity hover:opacity-80"
                 data-node-id="1:1785"
               >
                 Join Us

@@ -1,6 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   CATEGORIES_NAV_ROW1,
@@ -11,14 +15,71 @@ import {
 
 import { CourseCard } from "./CourseCard";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export function FeaturedCourses() {
   const [activeCategory, setActiveCategory] = useState("Featured");
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const categoriesRef = useRef<HTMLDivElement>(null);
+  const cardsGridRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // 1. Heading Reveal
+      gsap.from(headingRef.current, {
+        y: 35,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+
+      // 2. Category Pills Reveal
+      gsap.from(categoriesRef.current, {
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: categoriesRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+
+      // 3. Course Cards Staggered Reveal
+      const cards = cardsGridRef.current ? cardsGridRef.current.children : [];
+      if (cards && cards.length > 0) {
+        gsap.from(cards, {
+          y: 40,
+          opacity: 0,
+          duration: 0.75,
+          stagger: 0.1,
+          ease: "power2.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: cardsGridRef.current,
+            start: "top 90%",
+            once: true
+          }
+        });
+      }
+    },
+    { scope: sectionRef }
+  );
 
   return (
-    <section id="courses" className="w-full bg-white py-20 lg:py-28">
+    <section ref={sectionRef} id="courses" className="w-full bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         {/* Section Heading (Frame 3) */}
-        <div className="mx-auto max-w-[917px] text-center" data-node-id="12:101">
+        <div ref={headingRef} className="mx-auto max-w-[917px] text-center" data-node-id="12:101">
           <h2 className="font-['Poppins'] text-[32px] leading-[1.2] font-semibold tracking-[-0.44px] text-[#040819] sm:text-[40px] lg:text-[44px]">
             Discover Your Passion, Build Your Skills
           </h2>
@@ -30,7 +91,7 @@ export function FeaturedCourses() {
         </div>
 
         {/* Category Pills (3 Rows) */}
-        <div className="mt-12 flex flex-col items-center gap-3">
+        <div ref={categoriesRef} className="mt-12 flex flex-col items-center gap-3">
           {/* Row 1 */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             {CATEGORIES_NAV_ROW1.map((cat) => {
@@ -103,6 +164,7 @@ export function FeaturedCourses() {
 
         {/* 6 Course Cards Grid */}
         <div
+          ref={cardsGridRef}
           className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
           data-node-id="33:683"
         >

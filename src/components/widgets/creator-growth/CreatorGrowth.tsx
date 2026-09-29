@@ -1,8 +1,85 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export function CreatorGrowth() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const block1TextRef = useRef<HTMLDivElement>(null);
+  const block1CollageRef = useRef<HTMLDivElement>(null);
+  const block2CollageRef = useRef<HTMLDivElement>(null);
+  const block2TextRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // Block 1 Left Text Reveal
+      gsap.from(block1TextRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: block1TextRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+
+      // Block 1 Right Collage Reveal
+      gsap.from(block1CollageRef.current, {
+        y: 45,
+        opacity: 0,
+        duration: 0.85,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: block1CollageRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+
+      // Block 2 Left Collage Reveal
+      gsap.from(block2CollageRef.current, {
+        y: 45,
+        opacity: 0,
+        duration: 0.85,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: block2CollageRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+
+      // Block 2 Right Text Reveal
+      gsap.from(block2TextRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: block2TextRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+    },
+    { scope: sectionRef }
+  );
+
   return (
     <section
+      ref={sectionRef}
       className="relative w-full overflow-hidden bg-[#fafafa] py-24 lg:py-32"
       data-node-id="34:1159"
     >
@@ -14,7 +91,7 @@ export function CreatorGrowth() {
         {/* Block 1: Professional Growth (Left Text, Right Visual Collage) */}
         <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
           {/* Text Left */}
-          <div className="flex max-w-[574px] flex-col gap-8 text-left">
+          <div ref={block1TextRef} className="flex max-w-[574px] flex-col gap-8 text-left">
             <h2 className="font-['Poppins'] text-[32px] leading-[1.2] font-semibold tracking-[-0.44px] text-text-ink sm:text-[40px] lg:text-[44px]">
               Your Path to Professional Growth Starts Here!
             </h2>
@@ -48,7 +125,10 @@ export function CreatorGrowth() {
           </div>
 
           {/* Collage Right */}
-          <div className="relative h-[480px] w-full max-w-[580px] sm:h-[552px]">
+          <div
+            ref={block1CollageRef}
+            className="relative h-[480px] w-full max-w-[580px] sm:h-[552px]"
+          >
             {/* Behind: Course Card sample */}
             <div className="absolute top-0 left-0 z-10 w-[280px] rounded-[24px] border border-border-soft bg-white p-3 shadow-md sm:w-[320px]">
               <div className="relative h-[130px] w-full overflow-hidden rounded-[12px] bg-[#333] sm:h-[150px]">
@@ -107,7 +187,10 @@ export function CreatorGrowth() {
         {/* Block 2: Create & Manage (Left Visual Collage, Right Text) */}
         <div className="flex flex-col-reverse items-center justify-between gap-12 lg:flex-row lg:gap-16">
           {/* Collage Left */}
-          <div className="relative h-[500px] w-full max-w-[550px] sm:h-[596px]">
+          <div
+            ref={block2CollageRef}
+            className="relative h-[500px] w-full max-w-[550px] sm:h-[596px]"
+          >
             {/* Top Left Floating Blue Stat: Total Revenue */}
             <div className="absolute top-8 left-2 z-30 flex flex-col gap-1 rounded-2xl bg-brand-primary p-4 text-white shadow-xl backdrop-blur-md">
               <div className="flex items-center justify-between gap-4">
@@ -214,7 +297,7 @@ export function CreatorGrowth() {
           </div>
 
           {/* Text Right */}
-          <div className="flex max-w-[580px] flex-col gap-8 text-left">
+          <div ref={block2TextRef} className="flex max-w-[580px] flex-col gap-8 text-left">
             <h2 className="font-['Poppins'] text-[32px] leading-[1.2] font-semibold tracking-[-0.44px] text-text-ink sm:text-[40px] lg:text-[44px]">
               Create &amp; Manage Courses Easily.
             </h2>

@@ -1,10 +1,61 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { TESTIMONIALS_DATA } from "@/data";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export function Testimonials() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardsGridRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // Heading reveal
+      gsap.from(headingRef.current, {
+        y: 35,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+
+      // Cards staggered reveal
+      const cards = cardsGridRef.current ? cardsGridRef.current.children : [];
+      if (cards && cards.length > 0) {
+        gsap.from(cards, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power2.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: cardsGridRef.current,
+            start: "top 85%",
+            once: true
+          }
+        });
+      }
+    },
+    { scope: sectionRef }
+  );
+
   return (
     <section
+      ref={sectionRef}
       className="relative w-full overflow-hidden bg-[#fafafa] py-24 lg:py-32"
       data-node-id="34:1175"
     >
@@ -15,6 +66,7 @@ export function Testimonials() {
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-[120px]">
         {/* Heading Header */}
         <div
+          ref={headingRef}
           className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end lg:gap-12"
           data-node-id="34:1177"
         >
@@ -31,6 +83,7 @@ export function Testimonials() {
 
         {/* 3 Testimonial Cards */}
         <div
+          ref={cardsGridRef}
           className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
           data-node-id="34:1182"
         >
