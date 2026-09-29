@@ -1,7 +1,10 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import Image from "next/image";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 import { CourseGrid } from "./components/course-grid";
 import { Pagination } from "./components/pagination";
@@ -9,7 +12,13 @@ import { SearchFilters } from "./components/search-filters";
 import { SearchHeader } from "./components/search-header";
 import { useCourseSearch } from "./components/use-course-search";
 
+gsap.registerPlugin(useGSAP);
+
 function SearchContent() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const headerBannerRef = useRef<HTMLDivElement>(null);
+  const mainSectionRef = useRef<HTMLElement>(null);
+
   const {
     searchInput,
     setSearchInput,
@@ -27,10 +36,33 @@ function SearchContent() {
     clearAllFilters
   } = useCourseSearch(6);
 
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from(headerBannerRef.current, {
+        y: -30,
+        opacity: 0,
+        duration: 0.7,
+        clearProps: "all"
+      }).from(
+        mainSectionRef.current,
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.7,
+          clearProps: "all"
+        },
+        "-=0.3"
+      );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <>
+    <div ref={containerRef}>
       {/* Top Blue Hero/Header Section */}
-      <div className="relative w-full overflow-hidden bg-brand-primary">
+      <div ref={headerBannerRef} className="relative w-full overflow-hidden bg-brand-primary">
         {/* Background Grid Pattern */}
         <div className="pointer-events-none absolute inset-0 z-0 flex justify-center opacity-40">
           <Image
@@ -52,7 +84,7 @@ function SearchContent() {
       </div>
 
       {/* Main Course Listing & Filters Section */}
-      <section className="mx-auto max-w-[1440px] px-6 py-10 lg:px-[120px]">
+      <section ref={mainSectionRef} className="mx-auto max-w-[1440px] px-6 py-10 lg:px-[120px]">
         {/* Filter Controls Bar & Category Pills */}
         <SearchFilters
           selectedLevel={selectedLevel}
@@ -74,7 +106,7 @@ function SearchContent() {
           onPageChange={handlePageChange}
         />
       </section>
-    </>
+    </div>
   );
 }
 

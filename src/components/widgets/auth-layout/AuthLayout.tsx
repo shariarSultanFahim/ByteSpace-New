@@ -1,6 +1,13 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useRef, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+gsap.registerPlugin(useGSAP);
 
 interface AuthLayoutProps {
   headingSubtitle: string;
@@ -9,8 +16,40 @@ interface AuthLayoutProps {
 }
 
 export function AuthLayout({ headingSubtitle, description, children }: AuthLayoutProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const leftColRef = useRef<HTMLDivElement>(null);
+  const formCardRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from(leftColRef.current, {
+        x: -40,
+        opacity: 0,
+        duration: 0.85,
+        clearProps: "all"
+      }).from(
+        formCardRef.current,
+        {
+          y: 40,
+          scale: 0.96,
+          opacity: 0,
+          duration: 0.85,
+          ease: "back.out(1.4)",
+          clearProps: "all"
+        },
+        "-=0.5"
+      );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-brand-primary">
+    <div
+      ref={containerRef}
+      className="relative min-h-screen w-full overflow-hidden bg-brand-primary"
+    >
       {/* 120px Grid overlay matching Figma Group 4 */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-40">
         <Image
@@ -35,7 +74,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
               className="h-[31.5px] w-[28.875px]"
               priority
             />
-            <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-surface-subtle">
+            <span className="font-['Poppins'] text-[24px] font-bold tracking-tight text-white">
               ByteSpace
             </span>
           </Link>
@@ -46,7 +85,7 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
       <main className="relative z-20 mx-auto max-w-[1440px] px-6 pb-20 lg:px-[122px]">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Left Column: Heading + Text + Exact Visual Composition */}
-          <div className="hidden flex-col items-start lg:col-span-6 lg:flex">
+          <div ref={leftColRef} className="hidden flex-col items-start lg:col-span-6 lg:flex">
             {/* Heading Text Block */}
             <div className="max-w-[475px]">
               <h1 className="font-['Poppins'] text-[20px] leading-[1.2] font-semibold tracking-[-0.2px] text-surface-subtle">
@@ -367,7 +406,10 @@ export function AuthLayout({ headingSubtitle, description, children }: AuthLayou
 
           {/* Right Column: White Form Card */}
           <div className="flex w-full justify-center lg:col-span-6 lg:justify-end">
-            <div className="w-full max-w-[579px] rounded-[24px] bg-white p-8 shadow-2xl sm:p-[61px] sm:px-[63px]">
+            <div
+              ref={formCardRef}
+              className="w-full max-w-[579px] rounded-[24px] bg-white p-8 shadow-2xl sm:p-[61px] sm:px-[63px]"
+            >
               {children}
             </div>
           </div>

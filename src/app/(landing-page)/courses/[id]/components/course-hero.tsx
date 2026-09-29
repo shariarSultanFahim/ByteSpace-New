@@ -1,16 +1,36 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { toast } from "sonner";
 
 import type { CourseDetail } from "@/types";
+
+gsap.registerPlugin(useGSAP);
 
 interface CourseHeroProps {
   course: CourseDetail;
 }
 
 export function CourseHero({ course }: CourseHeroProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.from(containerRef.current, {
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        clearProps: "all"
+      });
+    },
+    { scope: containerRef }
+  );
+
   const handleShare = async () => {
     if (typeof window !== "undefined") {
       try {
@@ -31,7 +51,7 @@ export function CourseHero({ course }: CourseHeroProps) {
   };
 
   return (
-    <div className="w-full">
+    <div ref={containerRef} className="w-full">
       {/* Title & Metadata Top Row */}
       <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
         {/* Course Info */}
@@ -132,12 +152,27 @@ export function CourseHero({ course }: CourseHeroProps) {
 }
 
 export function CourseVideoPreview({ course }: { course: CourseDetail }) {
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.from(videoRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "all"
+      });
+    },
+    { scope: videoRef }
+  );
+
   const handlePlayPreview = () => {
     toast.info("Video preview player loaded!");
   };
 
   return (
-    <div className="w-full">
+    <div ref={videoRef} className="w-full">
       <div className="group relative aspect-[720/479] w-full overflow-hidden rounded-[24px] bg-[#443131] shadow-2xl">
         <Image
           src={course.videoPreviewImage}

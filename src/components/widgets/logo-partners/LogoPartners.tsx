@@ -1,12 +1,51 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { PARTNERS_DATA } from "@/data";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export function LogoPartners() {
+  const containerRef = useRef<HTMLElement>(null);
+  const logosRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const logos = logosRef.current ? logosRef.current.children : [];
+      gsap.from(logos, {
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.1,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          once: true
+        }
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="w-full bg-surface-subtle py-12 lg:py-16" data-node-id="1:1794">
+    <section
+      ref={containerRef}
+      className="w-full bg-surface-subtle py-12 lg:py-16"
+      data-node-id="1:1794"
+    >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-[120px]">
-        <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14 lg:justify-between lg:gap-[72px]">
+        <div
+          ref={logosRef}
+          className="flex flex-wrap items-center justify-center gap-10 sm:gap-14 lg:justify-between lg:gap-[72px]"
+        >
           {PARTNERS_DATA.map((partner) => (
             <div
               key={partner.id}

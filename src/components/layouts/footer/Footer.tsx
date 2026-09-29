@@ -1,11 +1,60 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+  const newsletterRef = useRef<HTMLDivElement>(null);
+  const linksRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // Newsletter Column Reveal
+      gsap.from(newsletterRef.current, {
+        y: 35,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: newsletterRef.current,
+          start: "top 90%",
+          once: true
+        }
+      });
+
+      // Links Columns Reveal
+      const linkCols = linksRef.current ? linksRef.current.children : [];
+      if (linkCols && linkCols.length > 0) {
+        gsap.from(linkCols, {
+          y: 35,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+          clearProps: "all",
+          scrollTrigger: {
+            trigger: linksRef.current,
+            start: "top 90%",
+            once: true
+          }
+        });
+      }
+    },
+    { scope: footerRef }
+  );
+
   return (
     <footer
+      ref={footerRef}
       className="relative w-full border-t border-border-soft/60 bg-white"
       data-node-id="34:1256"
     >
@@ -13,7 +62,7 @@ export function Footer() {
         {/* Top Content */}
         <div className="flex flex-col justify-between gap-12 lg:flex-row lg:gap-[92px]">
           {/* Newsletter Column */}
-          <div className="flex max-w-[528px] flex-col gap-8">
+          <div ref={newsletterRef} className="flex max-w-[528px] flex-col gap-8">
             <div className="flex flex-col gap-4">
               <Link href="/" className="flex items-center gap-[10px]">
                 <Image
@@ -59,7 +108,7 @@ export function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:gap-[60px]">
+          <div ref={linksRef} className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:gap-[60px]">
             {/* Column 1 */}
             <div className="flex flex-col gap-4">
               <p className="h-6 font-sans text-[16px] font-medium text-transparent">Browse</p>

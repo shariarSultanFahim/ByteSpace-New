@@ -1,19 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { toast } from "sonner";
 
 import type { Creator } from "@/types";
+
+gsap.registerPlugin(useGSAP);
 
 interface CreatorHeroProps {
   creator: Creator;
 }
 
 export function CreatorHero({ creator }: CreatorHeroProps) {
+  const containerRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
   const [isFollowing, setIsFollowing] = useState(false);
   const [followers, setFollowers] = useState(creator.followersCount);
+
+  useGSAP(
+    () => {
+      gsap.from(contentRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 0.75,
+        ease: "power3.out",
+        clearProps: "all"
+      });
+    },
+    { scope: containerRef }
+  );
 
   const handleFollowToggle = () => {
     if (isFollowing) {
@@ -28,7 +48,7 @@ export function CreatorHero({ creator }: CreatorHeroProps) {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-brand-primary">
+    <section ref={containerRef} className="relative w-full overflow-hidden bg-brand-primary">
       {/* Background Grid Pattern */}
       <div className="pointer-events-none absolute inset-0 z-0 opacity-40">
         <Image
@@ -41,7 +61,10 @@ export function CreatorHero({ creator }: CreatorHeroProps) {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col gap-10 px-6 pt-10 pb-16 lg:px-[120px]">
+      <div
+        ref={contentRef}
+        className="relative z-10 mx-auto flex max-w-[1440px] flex-col gap-10 px-6 pt-10 pb-16 lg:px-[120px]"
+      >
         {/* Creator Info: Avatar + Title/Role + Bio */}
         <div className="flex flex-col gap-8">
           {/* Avatar and Tag */}
